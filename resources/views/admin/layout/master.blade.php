@@ -55,6 +55,13 @@
                         <p>Stockist </p>
                     </a>
                 </li>
+
+                <li >
+                    <a href="/admin/vehicle">
+                        <i class="fa fa-car"></i>
+                        <p>Vehicle </p>
+                    </a>
+                </li>
                 </li>
 
             </ul>
@@ -62,7 +69,7 @@
     </div>
     <div class="main-panel">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute bg-primary fixed-top" >
             <div class="container-fluid">
                 <div class="navbar-wrapper">
                     <div class="navbar-toggle">

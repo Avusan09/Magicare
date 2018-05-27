@@ -1,5 +1,11 @@
 $(document).ready(function() {
     $('.mdb-select').material_select();
+    $('.datepicker').pickadate({
+        // Escape any “rule” characters with an exclamation mark (!).
+
+        formatSubmit: 'yyyy/mm/dd',
+
+    })
 });
 
 
