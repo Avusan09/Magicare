@@ -31,7 +31,7 @@ Route::group(['middleware'=>['Admin']], function ()
     Route::resource('/admin/stockist', 'StockistController');
     Route::resource('/admin/sales', 'SalesController');
     Route::resource('/admin/vehicle', 'VehiclesController');
-    Route::resource('/admin/vehicle/create', 'VehiclesController@create');
+    Route::post('/admin/vehicle/create', 'VehiclesController@create');
 
     Route::post('/admin/stockist/create', 'StockistController@store');
     Route::post('/admin/sales/create', 'SalesController@store');
