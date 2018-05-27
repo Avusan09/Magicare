@@ -107,16 +107,19 @@ class VehiclesController extends Controller
      */
     public function update(Request $request, Vehicles $vehicles)
     {
-        $input = $request->all();
 
 
+        $vehicles->update(request()->validate([
+            'servicing_date' => 'required',
 
-        $vehicles->fill($input)->save();
 
-        Session::flash('flash_message', 'Vehicle  successfully Updated!');
+        ]));
 
-        return redirect()->back();
+        return redirect('/admin/vehicle/')->with('status', 'Vehicle Updated');;
+
+
     }
+
 
     /**
      * Remove the specified resource from storage.
