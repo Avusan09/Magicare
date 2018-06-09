@@ -18,6 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/vehicals', 'HomeController@vehicles')->name('vehicles');
+Route::get('/hey', function()
+{
+    return view('hey');
+});
 
 
 
@@ -28,10 +33,13 @@ Route::group(['middleware'=>['Admin']], function ()
         return view('admin.dashboard');
     });
 
+
+
     Route::resource('/admin/stockist', 'StockistController');
     Route::resource('/admin/sales', 'SalesController');
     Route::resource('/admin/vehicle', 'VehiclesController');
     Route::post('/admin/vehicle/create', 'VehiclesController@create');
+    Route::patch('/admin/vehicle/{id}', 'VehiclesController@update');
 
     Route::post('/admin/stockist/create', 'StockistController@store');
     Route::post('/admin/sales/create', 'SalesController@store');

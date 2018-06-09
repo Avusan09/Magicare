@@ -22,7 +22,7 @@
 
                         <input type="text" class="form-control" id="stockistSearchInput" style="border:1px solid blue" onkeyup="searchStockists()" placeholder="Search for Stockists">
                         <div class="input-group-prepend">
-                            <span class="input-group-text purple lighten-3" id="basic-text1"><i class="fa fa-search text-white" aria-hidden="true"></i></span>
+                            <span class="input-group-text blue-gradient search-button lighten-3" id="basic-text1"><i class="fa fa-search text-white" aria-hidden="true"></i></span>
                         </div>
                     </div>
 
@@ -39,7 +39,7 @@
 
                             <div class="table-wrapper">
                                 <!--Table-->
-                                <table class="table table-hover mb-0" id="stockistTable">
+                                <table class="table table-hover mb-0 table-responsive-lg" id="stockistTable">
 
                                     <!--Table head-->
                                     <thead class="mdb-color darken-3 white-text">

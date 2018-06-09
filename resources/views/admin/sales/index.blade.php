@@ -26,7 +26,7 @@
 
                         <input type="text" class="form-control" id="salesSearchInput" style="border:1px solid blue" onkeyup="searchSales()" placeholder="Search  By Product Name ">
                         <div class="input-group-prepend">
-                            <span class="input-group-text purple lighten-3" id="basic-text1"><i class="fa fa-search text-white" aria-hidden="true"></i></span>
+                            <span class="input-group-text blue-gradient search-button lighten-3" id="basic-text1"><i class="fa fa-search text-white" aria-hidden="true"></i></span>
                         </div>
                     </div>
 
@@ -43,7 +43,7 @@
 
                             <div class="table-wrapper">
                                 <!--Table-->
-                                <table class="table table-hover mb-0" id="salesTable">
+                                <table class="table table-hover mb-0 table-responsive-lg" id="salesTable">
 
                                     <!--Table head-->
                                     <thead class="mdb-color darken-3 white-text">

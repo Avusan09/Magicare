@@ -4,9 +4,9 @@
 @section('content')
 
 
-    <form action="/admin/vehicle/{{$stks->id}}" method="POST">
+    <form method="post" action="{{action('VehiclesController@update', $stks->id)}}">
         {{csrf_field()}}
-        {{ method_field('PUT')}}
+        {{ method_field('PATCH') }}
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header text-center">
@@ -87,7 +87,7 @@
                         $statm_3 = ($statm == '0') ? 'selected' : '' ;
 
                         ?>
-                            Mobil Filter
+
                         <select class="mdb-select colorful-select dropdown-primary" name="mobil_filter">
                             <option value="" disabled selected>Mobil Filter</option>
                             <option <?php echo $statm_1; ?> value="1">1</option>
@@ -102,7 +102,7 @@
                         $statd_2 = ($statd == 'No') ? 'selected' : '' ;
 
                         ?>
-                            Diesel Filter
+
                         <select class="mdb-select colorful-select dropdown-primary" name="diesel_filter">
                             <option value="" disabled selected>Diesel Filter</option>
                             <option <?php echo $statd_1; ?> value="Yes">Yes</option>
@@ -118,7 +118,7 @@
                         $stat3_2 = ($stat3 == 'No') ? 'selected' : '' ;
 
                         ?>
-                            Hydrolic Filter
+
                         <select class="mdb-select colorful-select dropdown-primary" name="hydrolic_filter">
                             <option value="" disabled selected>Hydrolic Filter</option>
                             <option <?php echo $stat3_1; ?> value="Yes">Yes</option>
@@ -131,7 +131,7 @@
                     $stat4_2 = ($stat4 == 'No') ? 'selected' : '' ;
 
                     ?>
-                    Air Filter
+
                     <select class="mdb-select colorful-select dropdown-primary" name="air_filter">
                         <option value="" disabled selected>Air Filter</option>
                         <option  <?php echo $stat4_1; ?> value="Yes">Yes</option>
@@ -145,7 +145,7 @@
                         $statpf_2 = ($statpf == 'No') ? 'selected' : '' ;
 
                         ?>
-                            pilot_filter
+
                         <select class="mdb-select colorful-select dropdown-primary" name="pilot_filter">
                             <option value="" disabled selected>pilot_filter</option>
                             <option <?php echo $statpf_1; ?> value="Yes">Yes</option>
@@ -159,7 +159,7 @@
                     $stat6_2 = ($stat6 == 'No') ? 'selected' : '' ;
 
                     ?>
-                    Transmission Filter
+
                     <select class="mdb-select colorful-select dropdown-primary" name="transmission_filter">
                         <option value="" disabled selected>Transmission Filter</option>
                         <option <?php echo $stat6_1; ?> value="Yes">Yes</option>
@@ -172,7 +172,7 @@
 
                     ?>
 
-                    Water Safety
+
                     <select class="mdb-select colorful-select dropdown-primary" name="water_safety">
                         <option value="" disabled selected>Water Safety</option>
                         <option <?php echo $stat7_1; ?> value="Yes">Yes</option>
@@ -184,7 +184,7 @@
                     $stat8_2 = ($stat8 == 'No') ? 'selected' : '' ;
 
                     ?>
-                    Breather
+
                     <select class="mdb-select colorful-select dropdown-primary" name="breather">
                         <option value="" disabled selected>Breather</option>
                         <option <?php echo $stat8_1; ?> value="Yes">Yes</option>
@@ -211,7 +211,7 @@
                         $statpa_2 = ($statpa == 'No') ? 'selected' : '' ;
 
                         ?>
-                            Spare Parts
+
                         <select class="mdb-select colorful-select dropdown-primary" name="spare_parts">
                             <option value="" disabled selected>Spare Parts</option>
                             <option <?php echo $statpa_1; ?> value="Yes">Yes</option>
@@ -221,18 +221,18 @@
 
                     <div>
                         <?php
-                        $statre=$stks->engine_repair;
-                        $stater_1 = ($statre == 'None') ? 'selected' : '' ;
-                        $stater_2 = ($statre == 'Full') ? 'selected' : '' ;
-                        $stater_3 = ($statre == 'Half') ? 'selected' : '' ;
+                        $stat_engine_repair =$stks->engine_repair;
+                        $stater_1 = ($stat_engine_repair == 'No') ? 'selected' : '' ;
+                        $stater_2 = ($stat_engine_repair == 'Full') ? 'selected' : '' ;
+                        $stater_3 = ($stat_engine_repair == 'Half') ? 'selected' : '' ;
 
                         ?>
-                            Engine Repair
+
                         <select class="mdb-select colorful-select dropdown-primary" name="engine_repair">
                             <option value="" disabled selected>Engine Repair</option>
-                            <option <?php echo $stater_1; ?> value="Yes">None</option>
-                            <option <?php echo $stater_2; ?> value="No">Full</option>
-                            <option <?php echo $stater_3; ?> value="No">Half</option>
+                            <option <?php echo $stater_1; ?> value="No">No</option>
+                            <option <?php echo $stater_2; ?> value="Full">Full</option>
+                            <option <?php echo $stater_3; ?> value="Half">Half</option>
                         </select>
                     </div>
 
@@ -244,7 +244,7 @@
 
 
                     <div class="md-form">
-                        <textarea type="text" id="remarks" class="md-textarea form-control" rows="5" name="remarks" ></textarea>
+                        <textarea type="text" id="remarks" class="md-textarea form-control" rows="5" name="remarks" >{{$stks->remarks}}</textarea>
                         <label for="remarks">Remarks</label>
                     </div> <br>
 

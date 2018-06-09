@@ -15,6 +15,10 @@
                         @endif
 
                         You are logged in in the front-end!
+
+                            <br>
+
+                        Vehicals Information : <a href="vehicals">Vehicals</a>
                     </div>
                 </div>
             </div>

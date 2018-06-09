@@ -2,6 +2,7 @@
 @section('dashboard','Stockist')
 @section('title','| Vehicle Info')
 @section('content')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
     <div class="content">
         <div class="row">
@@ -15,15 +16,29 @@
                         </div>
                     @endif
                     <a href="vehicle/create" class="btn float-right btn-default btn-rounded mb-4" >Add Vehicle Information</a>
+                    <button id="download" class="float-right btn btn-success">Download As PDF</button>
+
 
                 <!--Top Table UI-->
+                    <div class="row" style="width: 100%">
+                    <div class="col-md-6">
+                        <div class="input-group md-form form-sm form-1 pl-0">
 
-                    <div class="input-group md-form form-sm form-1 pl-0">
-
-                        <input type="text" class="form-control" id="stockistSearchInput" style="border:1px solid blue" onkeyup="searchVehicals()" placeholder="Search for Vehicals">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text purple lighten-3" id="basic-text1"><i class="fa fa-search text-white" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" id="searchServicingDate" style="border:1px solid blue" onkeyup="ServicingDate()" placeholder="Search by Servicing Date">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text blue-gradient search-button lighten-3" id="basic-text1"><i class="fa fa-search text-white" aria-hidden="true"></i></span>
+                            </div>
                         </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group md-form form-sm form-1 pl-0">
+
+                            <input type="text" class="form-control" id="searchVehicalPrefix" style="border:1px solid blue" onkeyup="VehicalPrefix()" placeholder="Search by  Vehicals Number">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text blue-gradient search-button lighten-3" id="basic-text1"><i class="fa fa-search text-white" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
                     </div>
 
 
@@ -40,6 +55,7 @@
                             <div class="table-wrapper">
                                 <!--Table-->
                                 <table class="table table-hover table-responsive" id="vehicalTable">
+                                    
 
                                     <!--Table head-->
                                     <thead class="mdb-color darken-3 white-text">
@@ -67,6 +83,7 @@
                                         <th class="th-sm"><a>Spare Parts</a></th>
                                         <th class="th-sm"><a>Engine Repair</a></th>
                                         <th class="th-sm"><a>Total Cost</a></th>
+                                        <th class="th-sm"><a>Remarks</a></th>
 
                                         <th class="th-sm"><a>Edit</a></th>
                                         <th class="th-sm"><a>Delete</a></th>
@@ -104,10 +121,11 @@
                                             <td class="text-center">{{$sks->spare_parts}}</td>
                                             <td class="text-center">{{$sks->engine_repair}}</td>
                                             <td class="text-center">{{$sks->total_cost}}</td>
+                                            <td class="text-center">{{$sks->remarks}} </td>
 
 
 
-                                            <td><a href="/admin/vehicle/{{$sks->id}}/edit" class="btn btn-warning float-right " >Edit <i class="fa fa-edit"></i></a>
+                                            <td><a href="/admin/vehicle/{{$sks->id}}/edit" class="btn btn-warning float-right " > <i class="fa fa-edit"></i></a>
 
                                             </td>
                                             <td>
@@ -181,6 +199,22 @@
         </div>
     </div>
 
+    <script>
+        $(document).ready(function(){
+
+        var doc = new jsPDF();
+
+        $('#download').click(function () {
+            doc.fromHTML($('#vehicalTable').html(), 10, 10, {
+                'width': 170,
+
+            });
+            doc.save('sample-file.pdf');
+        });
+            });
+    </script>
+
 @stop
+
 
 

@@ -1,9 +1,11 @@
 $(document).ready(function() {
     $('.mdb-select').material_select();
     $('.datepicker').pickadate({
-        // Escape any “rule” characters with an exclamation mark (!).
-
-        formatSubmit: 'yyyy/mm/dd',
+        monthsFull: ['Baishakh', 'Jestha', 'Ashar', 'Sharawn', 'Bhadau', 'Ashoj', 'Kartik', 'Mangsir', 'Poush', 'Magh', 'Falgun', 'Chaitt'],
+        monthsShort: ['Baishakh', 'Jestha', 'Ashar', 'Sharawn', 'Bhadau', 'Ashoj', 'Kartik', 'Mangsir', 'Poush', 'Magh', 'Falgun', 'Chaitt'],
+        format: 'dd/mm/yy',
+        min: new Date(2070,1,1),
+        max: new Date(2100,12,31),
 
     })
 });
@@ -40,6 +42,48 @@ function searchSales() {
     // Loop through all table rows, and hide those who don't match the search query
     for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+
+function ServicingDate() {
+    // Declare variables
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("searchServicingDate");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("vehicalTable");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+
+function VehicalPrefix() {
+    // Declare variables
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("searchVehicalPrefix");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("vehicalTable");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[2];
         if (td) {
             if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
                 tr[i].style.display = "";

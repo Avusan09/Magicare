@@ -100,24 +100,44 @@ class VehiclesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @var TYPE_NAME $vehicles
-
+     * @param Request $request
+     * @param $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Vehicles $vehicles)
+    public function update(Request $request, $id)
     {
 
+        $vehicles= Vehicles::find($id);
+        $vehicles->servicing_date =$request->get('servicing_date');
+        $vehicles->vehical_prefix = $request->get('vehical_prefix');
+        $vehicles->vehical_number = $request->get('vehical_number');
+        $vehicles->type = $request->get('type');
+        $vehicles->worked_hours = $request->get('worked_hours');
+        $vehicles->mobil = $request->get('mobil');
+        $vehicles->transmission_oil = $request->get('transmission_oil');
+        $vehicles->hydrolic = $request->get('hydrolic');
+        $vehicles->mobil_filter = $request->get('mobil_filter');
+        $vehicles->diesel_filter = $request->get('diesel_filter');
+        $vehicles->hydrolic_filter = $request->get('hydrolic_filter');
+        $vehicles->air_filter = $request->get('air_filter');
+        $vehicles->pilot_filter = $request->get('pilot_filter');
+        $vehicles->transmission_filter = $request->get('transmission_filter');
+        $vehicles->water_safety = $request->get('water_safety');
+        $vehicles->breather = $request->get('breather');
+        $vehicles->tyres = $request->get('tyres');
+        $vehicles->tubes = $request->get('tubes');
+        $vehicles->spare_parts = $request->get('spare_parts');
+        $vehicles->engine_repair = $request->get('engine_repair');
+        $vehicles->total_cost = $request->get('total_cost');
+        $vehicles->remarks = $request->get('remarks');
+        $vehicles->save();
+        return redirect()->action('VehiclesController@index');
+    }
 
-        $vehicles->update(request()->validate([
-            'servicing_date' => 'required',
-
-
-        ]));
-
-        return redirect('/admin/vehicle/')->with('status', 'Vehicle Updated');;
-
-
+    public function userVehical()
+    {
+        $vehicle = DB::table('vehicles')->get();
+        return view('admin.vehicle.index', compact('vehicle'));
     }
 
 

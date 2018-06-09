@@ -5,156 +5,155 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin @yield('title') </title>
-
+    <title>Admin @yield('title')</title>
+    {{--<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">--}}
     <link rel="stylesheet" href="{{asset('css/compiled.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/now-ui-dashboard.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/backend.css')}}">
+    <link rel="stylesheet" href="{{asset('css/thaili.css')}}">
+    <link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
 
 
 </head>
 <body>
-<div class="wrapper ">
-    <div class="sidebar" data-color="white">
-        <!--
-    Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
--->
-        <div class="logo">
-            <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-               MC
-            </a>
-            <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                Magicare
-            </a>
-        </div>
-        <div class="sidebar-wrapper">
-            <ul class="nav">
-                <li >
-                    <a href="/admin">
-                        <i class="fa fa-user"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
-                <li >
-                    <a href="/admin-user">
-                        <i class="fa fa-user"></i>
-                        <p>Users</p>
-                    </a>
+<section>
+    <div id="mySidenav" class="sidenav z-depth-3">
 
-                <li>
-                    <a href="../admin/sales">
-                        <i class="fa fa-archive"></i>
-                        <p>Sales  </p>
+        <div id="dashboard-shrinked" style="display:none;">
+            <div class="thaili-logo-dashboard-big" >
+                <a href="/">
+                    <img src="{{asset('img/mini.png')}}" id="dashboard-logo" class="grails-logo wow fadeIn" style="padding-left:10px;height: 60px;"/>
+                </a>
+            </div>
+
+            <hr style="border: 1px solid white">
+
+            <ul class="list-group list-group-flush">
+
+                <li class="list-group-item">
+                    <a href="/admin" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                        <img src="{{asset('img/icons/01.png')}}" class="thaili-icons-lg" />
                     </a>
                 </li>
 
-                <li >
-                    <a href="/admin/stockist">
-                        <i class="fa fa-archive"></i>
-                        <p>Stockist </p>
+                <li class="list-group-item">
+                    <a href="/admin/sales" data-toggle="tooltip" data-placement="right" title="Manage Sales">
+                        <img src="{{asset('img/icons/03.png')}}" class="thaili-icons-lg" >
                     </a>
                 </li>
 
-                <li >
-                    <a href="/admin/vehicle">
-                        <i class="fa fa-car"></i>
-                        <p>Vehicle </p>
+                <li class="list-group-item">
+                    <a href="/admin/stockist" data-toggle="tooltip" data-placement="right" title="Manage Stockists">
+                        <img src="{{asset('img/icons/tree.png')}}" class="thaili-icons-lg" >
                     </a>
                 </li>
+
+
+
+                <li class="list-group-item">
+                    <a href="/admin/vehicle" data-toggle="tooltip" data-placement="right" title="Vehicle">
+                        <img src="{{asset('img/icons/vehicle.png')}}" class="thaili-icons-lg" >
+                    </a>
                 </li>
+
 
             </ul>
         </div>
-    </div>
-    <div class="main-panel">
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute bg-primary fixed-top" >
-            <div class="container-fluid">
-                <div class="navbar-wrapper">
-                    <div class="navbar-toggle">
-                        <button type="button" class="navbar-toggler">
-                            <span class="navbar-toggler-bar bar1"></span>
-                            <span class="navbar-toggler-bar bar2"></span>
-                            <span class="navbar-toggler-bar bar3"></span>
-                        </button>
-                    </div>
-                    <a class="navbar-brand" > @yield('dashboard')</a>
-                </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-bar navbar-kebab"></span>
-                    <span class="navbar-toggler-bar navbar-kebab"></span>
-                    <span class="navbar-toggler-bar navbar-kebab"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                    <form class="form-inline md-form form-sm">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                        <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
-                    </form>
-                    <ul class="navbar-nav">
 
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#pablo">
-                                <i class="fa fa-user-circle-o"></i>
-                                <p>
-                                    <span class="d-lg-none d-md-block">Account</span>
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
+        <div id="dashboard-expanded" class="wow fadeIn" >
+            <div class="nav-link">
+                <div class="profile-image">
+                    <a href="/">
+                        <img src="{{asset('img/magicare.png')}}" id="dashboard-logo"  style="height: 150px;margin-left: -25px;" class="grails-logo wow fadeIn"/>
+                    </a>
+                    <span class="online-status online"></span>
                 </div>
+                <br>
+
             </div>
-        </nav>
-        <!-- End Navbar -->
-        <div class="panel-header panel-header-lg" style="height: 100px !important;">
 
+
+            <ul class="list-group list-group-flush"  class="wow fadeIn">
+                <a href="/admin/" class="list-group-item">
+                    <img src="{{asset('img/icons/01.png')}}" class="thaili-icons" />
+                    Dashboard
+                </a>
+
+
+
+                <a href="/admin/sales"><li class="list-group-item"> <img src="{{asset('img/icons/03.png')}}" class="thaili-icons-xs" /> Sales</li></a>
+
+                <!-- Accordion card -->
+                <a href="/admin/stockist"><li class="list-group-item"><img src="{{asset('img/icons/tree.png')}}" class="thaili-icons-xs" /> Stockists</li></a>
+
+                <a href="/admin/vehicle" class="list-group-item"><img src="{{asset('img/icons/vehicle.png')}}" class="thaili-icons" />      Vehicles</a>
+                <a href="" class="list-group-item"><img src="{{asset('img/icons/settings.png')}}" class="thaili-icons" />     Settings</a>
+
+            </ul>
         </div>
 
 
-        @yield('content')
-
-
-
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="https://www.creative-tim.com">
-                                Magicare
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://presentation.creative-tim.com">
-                                About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                                Blog
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="copyright">
-                    &copy;
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script>, Designed by
-                    <a href="https://www.invisionapp.com" target="_blank">CarefreeAv</a>. Coded by
-                    <a href="https://www.creative-tim.com" target="_blank">CarefreeAv</a>.
-                </div>
-            </div>
-        </footer>
     </div>
-</div>
+
+    <div id="main">
+
+        <nav class="navbar  navbar-expand-lg navbar-dark black scrolling-navbar navbar-75" >
+            <div style="font-size:30px;cursor:pointer;padding-right: 10px" class="primary-color-gold" onclick="toggleNav()">&#9776; </div>
 
 
-    <script src="{{asset('js/jquery.min.js')}}"></script>
+            <a class="navbar-brand" href="/admin"><strong>Admin Dashboard</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav nav-flex-icons ml-auto">
+                    <li class="nav-item">
+
+                    </li>
+                    <li class="nav-item" style="padding-top: 20px">
+                        <a class="nav-link" >Admin</a>
+                    </li>
+                    <div class="dropdown" style="padding-top: 20px">
+
+                        <!--Trigger-->
+                        <a class="nav-link  dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><img src="{{asset('img/icons/settings.png')}}" class="thaili-icons" /> </a>
+
+
+                        <!--Menu-->
+                        <div class="dropdown-menu dropdown-primary" style="left: -100px;">
+                            <a class="dropdown-item" href="#">Settings</a>
+                            <a class="dropdown-item" href="/#/#">Profile</a>
+                            <a class="dropdown-item" href="#">Report</a>
+                            <a class="dropdown-item" href="/logout">Logout</a>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+
+        </nav>
+
+        <div class="container-fluid dashboard-vendor" >
+            @yield('content')
+        </div>
+
+
+    </div>
+
+
+
+
+</section>
+
+
+
     <script src="{{asset('js/compiled.min.js')}}"></script>
-    <script src="{{asset('js/now-ui-dashboard.min.js')}}"></script>
+    <script src="{{asset('js/thaili.js')}}"></script>
     <script src="{{asset('js/extra.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.js"></script>
+
 
 </body>
 </html>

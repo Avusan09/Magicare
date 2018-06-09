@@ -1,0 +1,403 @@
+/*Related To everypage*/
+html, body, header{
+    height: 100%;
+    min-height: 100vh;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    overflow-x: hidden;
+}
+
+.view-full{
+    height: 100%;
+    min-height: 100vh;
+
+}
+.search-button
+{
+    position: absolute;
+    top: 10%;
+    right: 1%;
+    height: 40px;
+}
+.secondary-color-blue-transparent
+{
+    background: rgba(24, 141, 182, 0.47);
+}
+
+.view-mini
+{
+    height: 150px;
+}
+
+.view-semi
+{
+    height:600px;
+    min-height: 600px;
+}
+
+.view-footer
+{
+    height:400px;
+    min-height: 400px;
+    background: #15688a;
+    color:white;
+    font-weight: bolder;
+    padding:50px 60px 50px 60px;
+
+}
+
+.h4-light
+{
+    font-weight: 200;
+    letter-spacing: 2.0px;
+    line-height: 5px;
+    font-size: 32px;
+
+}
+
+.text-spacing
+{
+    font-family: Roboto,sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: #323232;
+}
+
+.navbar-no-box-shadow
+{
+    -webkit-box-shadow: 0 0px 0px 0 rgba(0,0,0,0),0 0px 0px 0 rgba(0,0,0,0);
+    box-shadow: 0 0px 0px 0 rgba(0,0,0,0),0 0px 0px 0 rgba(0,0,0,0);
+
+}
+
+.navbar-expand-lg .navbar-nav .nav-link
+{
+    padding: 10px;
+    font-weight: 600;
+}
+
+.top-nav-collapse {
+    background-color: #15688a;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #15688a;
+    }
+}
+/*Every page*/
+/*Login Page extras*/
+.intro-login {
+    background-color:#166076;
+    background-size: cover;
+    height: 100vh;
+
+}
+.intro-index {
+    background:url("https://s-i.huffpost.com/gen/1371331/images/o-SMART-PHONE-facebook.jpg");
+    background-size: cover;
+    height: 100vh;
+
+}
+
+.intro-empty {
+    background:#fff;
+    background-size: cover;
+    height: 400px;
+
+}
+
+.container-login-page
+{
+    padding-right: 125px;
+    padding-left: 70px;
+    position:absolute;
+    top:25%;
+}
+
+
+
+.container-index-page
+{
+    width: 100%;
+    position:absolute;
+    top:25%;
+    padding: 0 10% 0 10%;
+    text-align: center;
+    max-width: 100vw;
+
+}
+
+.container-index-page h1
+{
+    font-weight: 900;
+    font-size:3.0rem;
+}
+
+.gold-half{
+    background-color:#15688a;
+    width: 10%;
+    height: 5px;
+
+
+}
+
+.title-font-color
+{
+    color:black;
+}
+
+.primary-color-gold
+{
+    color:#e2bb22;
+}
+
+.primary-color-gold-bg
+{
+    background-color:#e2bb22;
+}
+.secondary-color-blue
+{
+    color:#15688a;
+}
+.secondary-color-blue-bg
+{
+    background-color:#15688a;
+}
+
+.md-form input[type="text"]:focus:not([readonly]) + label,.md-form input[type="password"]:focus:not([readonly]) + label,
+.md-form input[type="number"]:focus:not([readonly]) + label,.md-form input[type="email"]:focus:not([readonly]) + label
+{
+    color:#e2bb22;
+
+}
+
+.md-form input[type="text"],.md-form input[type="email"],.md-form input[type="password"],.md-form input[type="number"], .md-form input[type="textarea"]
+{
+    height: 40px !important;
+    border: 2px solid aliceblue;
+    padding: 10px;
+    font-weight: 700;
+    width: 100%;
+}
+
+.md-form label
+{
+    margin-left:10px;
+    top: 1.65rem;
+}
+
+.background-color-gradient{
+    background: linear-gradient(white, white, white, white, #efefef);
+}
+
+.page-fixed-center
+{
+    position: relative;
+    top:30%;
+    left: 30%;
+    border: 1px solid white;
+    border-radius: 50px;
+    background: rgba(249, 243, 243, 0.8);
+    height: 250px;
+    width: 250px;
+}
+
+.logo-login-page
+{
+    position: relative;
+    left: 20%;
+    top: 20%;
+    height: 150px;
+    width: 150px;
+}
+
+.images-buttons-stores
+{
+    height: 50px;
+    width: 100px;
+}
+
+.fab-at-the-end
+{
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+}
+
+.container-secondary-index
+{
+    padding: 20px 60px 20px 60px;
+}
+
+.container-security-page
+{
+    background: #f3f6f8;
+    padding: 50px;
+}
+
+.view-short
+{
+    max-height: 450px;
+    height: 450px;
+}
+
+.col-center-everything-col1
+{
+    position: relative;
+    top:30%;
+
+
+}
+.col-center-everything-col2
+{
+    position: relative;
+    top:15%;
+
+
+
+}
+
+.col-center-everything-col3
+{
+    position: relative;
+    top:30%;
+
+
+}
+
+.viber-style-image
+{
+    height: 400px;
+    width: available;
+}
+
+.partners-logo
+{
+    height: 100px;
+    width: 100%;
+}
+
+.img-fluid
+{
+    height: 150px;
+}
+
+.container-join-now-page {
+    background: #f3f6f8;
+    max-height: 150px;
+    height: 150px;
+    padding: 50px;
+}
+
+.btn-outline-blue {
+    border: 2px solid #15688a !important;
+    color:#15688a !important;
+}
+
+.deep-purple.accent-2
+{
+    background: #15688a !important;
+
+}
+
+.thaili-icons
+{
+    height: 20px;
+    width: 20px;
+}
+
+.thaili-icons-xs
+{
+    height: 15px;
+    width: 15px;
+}
+.thaili-icons-lg
+{
+    height: 40px;
+    width: 40px;
+}
+
+@media only screen and (min-width: 768px)
+{
+    .img-float-right
+    {
+        float:right
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .viber-style-image
+    {
+        height: 200px;
+        width: available;
+    }
+
+    .view-short {
+        max-height: 550px;
+        height: 550px;
+    }
+
+    h1,h2,h3,h4,h5,h6,p
+    {
+        font-size:100%;
+    }
+
+    .h4-light{
+        font-size:26px;
+        letter-spacing: 1.0px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .hide-on-sm
+    {
+        display:none;
+    }
+
+    .container-login-page
+    {
+        padding-right: 125px;
+        padding-left: 70px;
+        position:absolute;
+        margin-top: 50%;
+    }
+
+    .view img
+    {
+
+        height: 50px;
+        display : inline;
+    }
+
+    .container-security-page
+    {
+        background: #f3f6f8;
+        padding: 10px;
+    }
+
+
+    .container-join-now-page {
+        background: #f3f6f8;
+        max-height: 150px;
+        height: 150px;
+        padding: 0;
+    }
+
+    .img-fluid
+    {
+        width: 100%;
+    }
+
+    .container-index-page {
+        width: 100%;
+        position: absolute;
+        top: 15%;
+
+        text-align: center;
+        max-width: 100vw;
+    }
+
+
+
+}
