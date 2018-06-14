@@ -2,7 +2,7 @@
 @section('dashboard','Stockist')
 @section('title','| Vehicle Info')
 @section('content')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
 
     <div class="content">
         <div class="row">
@@ -54,7 +54,7 @@
 
                             <div class="table-wrapper">
                                 <!--Table-->
-                                <table class="table table-hover table-responsive" id="vehicalTable">
+                                <table class="table table-hover table-responsive" id="myTable">
                                     
 
                                     <!--Table head-->
@@ -100,7 +100,7 @@
                                         <tr>
 
                                             <td class="text-center">{{$sks->servicing_date}}</td>
-                                            <td class="text-center">{{$sks->vehical_prefix}}</td>
+                                            <td class="text-center text-uppercase">{{$sks->vehical_prefix}}</td>
                                             <td class="text-center">{{$sks->vehical_number}}</td>
 
                                             <td class="text-center">{{$sks->type}}</td>
@@ -200,18 +200,14 @@
     </div>
 
     <script>
-        $(document).ready(function(){
-
-        var doc = new jsPDF();
-
-        $('#download').click(function () {
-            doc.fromHTML($('#vehicalTable').html(), 10, 10, {
-                'width': 170,
-
+        $(document).ready( function () {
+            $('#myTable').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                   'csv', 'excel', 'pdf', 'print'
+                ]
             });
-            doc.save('sample-file.pdf');
-        });
-            });
+        } );
     </script>
 
 @stop

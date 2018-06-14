@@ -1,13 +1,6 @@
-$(document).ready(function() {
-    $('.mdb-select').material_select();
-    $('.datepicker').pickadate({
-        monthsFull: ['Baishakh', 'Jestha', 'Ashar', 'Sharawn', 'Bhadau', 'Ashoj', 'Kartik', 'Mangsir', 'Poush', 'Magh', 'Falgun', 'Chaitt'],
-        monthsShort: ['Baishakh', 'Jestha', 'Ashar', 'Sharawn', 'Bhadau', 'Ashoj', 'Kartik', 'Mangsir', 'Poush', 'Magh', 'Falgun', 'Chaitt'],
-        format: 'dd/mm/yy',
-        min: new Date(2070,1,1),
-        max: new Date(2100,12,31),
 
-    })
+$(document).ready(function(){
+    $('.nepali-calendar').nepaliDatePicker();
 });
 
 

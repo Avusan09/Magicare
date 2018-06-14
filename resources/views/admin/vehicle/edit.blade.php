@@ -15,7 +15,7 @@
                 </div>
                 <div class="modal-body mx-3">
                     <label for="servicing_date"  class="grey-text">Servicing Date</label>
-                    <input value="{{$stks->servicing_date }}"   type="text"  name="servicing_date" id="servicing_date" class="form-control datepicker" >
+                    <input value="{{$stks->servicing_date }}"   type="text"  name="servicing_date" id="servicing_date" class="form-control nepali-calendar" >
 
                     <br>
 
@@ -42,8 +42,8 @@
                         $stat0_7 = ($statvehicle == 'Generator') ? 'selected' : '' ;
 
                         ?>
-                            Vehicle Type
-                        <select class="mdb-select colorful-select dropdown-primary" name="type">
+                           <p class="text-muted">Vehicle Type</p>
+                        <select class="browser-default custom-select" name="type">
                             <option value="" disabled selected>Choose your Vehicle Type</option>
                             <option <?php echo $stat0_1; ?> value="Bike">Bike</option>
                             <option <?php echo $stat0_2; ?> value="Scooter">Scooter</option>
@@ -52,8 +52,8 @@
                             <option <?php echo $stat0_5; ?> value="Tipper">Tipper</option>
                             <option <?php echo $stat0_6; ?> value="Heavy">Heavy</option>
                             <option <?php echo $stat0_7; ?> value="Generator">Generator</option>
-                        </select>
-                    </div> <br>
+                        </select><br>
+                    </div>
 
                     <div>
                         <label for="worked_hours" class="grey-text">Worked Hours</label>
@@ -87,14 +87,15 @@
                         $statm_3 = ($statm == '0') ? 'selected' : '' ;
 
                         ?>
-
-                        <select class="mdb-select colorful-select dropdown-primary" name="mobil_filter">
+                            <p class="text-muted">Mobil Filter</p>
+                        <select class="browser-default custom-select" name="mobil_filter">
                             <option value="" disabled selected>Mobil Filter</option>
                             <option <?php echo $statm_1; ?> value="1">1</option>
                             <option <?php echo $statm_2; ?> value="2">2</option>
                             <option <?php echo $statm_3; ?> value="0">0</option>
-                        </select>
+                        </select><br>
                     </div>
+
                     <div>
                         <?php
                         $statd=$stks->diesel_filter;
@@ -102,12 +103,12 @@
                         $statd_2 = ($statd == 'No') ? 'selected' : '' ;
 
                         ?>
-
-                        <select class="mdb-select colorful-select dropdown-primary" name="diesel_filter">
+                            <p class="text-muted">Diesel Filter</p>
+                        <select class="browser-default custom-select" name="diesel_filter">
                             <option value="" disabled selected>Diesel Filter</option>
                             <option <?php echo $statd_1; ?> value="Yes">Yes</option>
                             <option <?php echo $statd_2; ?> value="No">No</option>
-                        </select>
+                        </select><br>
                     </div>
 
 
@@ -118,12 +119,12 @@
                         $stat3_2 = ($stat3 == 'No') ? 'selected' : '' ;
 
                         ?>
-
-                        <select class="mdb-select colorful-select dropdown-primary" name="hydrolic_filter">
+                            <p class="text-muted">Hydrolic Filter</p>
+                        <select class="browser-default custom-select" name="hydrolic_filter">
                             <option value="" disabled selected>Hydrolic Filter</option>
                             <option <?php echo $stat3_1; ?> value="Yes">Yes</option>
                             <option <?php echo $stat3_2; ?> value="No">No</option>
-                        </select>
+                        </select><br>
                     </div>
                     <?php
                     $stat4=$stks->air_filter;
@@ -131,12 +132,12 @@
                     $stat4_2 = ($stat4 == 'No') ? 'selected' : '' ;
 
                     ?>
-
-                    <select class="mdb-select colorful-select dropdown-primary" name="air_filter">
+                    <p class="text-muted">Air Filter</p>
+                    <select class="browser-default custom-select" name="air_filter">
                         <option value="" disabled selected>Air Filter</option>
                         <option  <?php echo $stat4_1; ?> value="Yes">Yes</option>
                         <option   <?php echo $stat4_2; ?> value="No">No</option>
-                    </select>
+                    </select><br>
 
                     <div>
                         <?php
@@ -145,12 +146,12 @@
                         $statpf_2 = ($statpf == 'No') ? 'selected' : '' ;
 
                         ?>
-
-                        <select class="mdb-select colorful-select dropdown-primary" name="pilot_filter">
-                            <option value="" disabled selected>pilot_filter</option>
+                            <p class="text-muted">Pilot Filter</p>
+                        <select class="browser-default custom-select" name="pilot_filter">
+                            <option value="" disabled selected>Pilot Filter</option>
                             <option <?php echo $statpf_1; ?> value="Yes">Yes</option>
                             <option <?php echo $statpf_2; ?> value="No">No</option>
-                        </select>
+                        </select><br>
                     </div>
 
                     <?php
@@ -159,12 +160,12 @@
                     $stat6_2 = ($stat6 == 'No') ? 'selected' : '' ;
 
                     ?>
-
-                    <select class="mdb-select colorful-select dropdown-primary" name="transmission_filter">
+                    <p class="text-muted">Transmission Filter</p>
+                    <select class="browser-default custom-select" name="transmission_filter">
                         <option value="" disabled selected>Transmission Filter</option>
                         <option <?php echo $stat6_1; ?> value="Yes">Yes</option>
                         <option <?php echo $stat6_2; ?>value="No">No</option>
-                    </select>
+                    </select><br>
                     <?php
                     $stat7=$stks->water_safety;
                     $stat7_1 = ($stat7 == 'Yes') ? 'selected' : '' ;
@@ -172,24 +173,24 @@
 
                     ?>
 
-
-                    <select class="mdb-select colorful-select dropdown-primary" name="water_safety">
+                    <p class="text-muted">Water Safety</p>
+                    <select class="browser-default custom-select" name="water_safety">
                         <option value="" disabled selected>Water Safety</option>
                         <option <?php echo $stat7_1; ?> value="Yes">Yes</option>
                         <option <?php echo $stat7_2; ?> value="No">No</option>
-                    </select>
+                    </select><br>
                     <?php
                     $stat8=$stks->breather;
                     $stat8_1 = ($stat8 == 'Yes') ? 'selected' : '' ;
                     $stat8_2 = ($stat8 == 'No') ? 'selected' : '' ;
 
                     ?>
-
-                    <select class="mdb-select colorful-select dropdown-primary" name="breather">
+                    <p class="text-muted">Breather</p>
+                    <select class="browser-default custom-select" name="breather">
                         <option value="" disabled selected>Breather</option>
                         <option <?php echo $stat8_1; ?> value="Yes">Yes</option>
                         <option <?php echo $stat8_2; ?> value="No">No</option>
-                    </select>
+                    </select><br>
 
 
 
@@ -211,12 +212,12 @@
                         $statpa_2 = ($statpa == 'No') ? 'selected' : '' ;
 
                         ?>
-
-                        <select class="mdb-select colorful-select dropdown-primary" name="spare_parts">
+                            <p class="text-muted">Spare Parts</p>
+                        <select class="browser-default custom-select" name="spare_parts">
                             <option value="" disabled selected>Spare Parts</option>
                             <option <?php echo $statpa_1; ?> value="Yes">Yes</option>
                             <option <?php echo $statpa_2; ?> value="No">No</option>
-                        </select>
+                        </select><br>
                     </div>
 
                     <div>
@@ -227,13 +228,13 @@
                         $stater_3 = ($stat_engine_repair == 'Half') ? 'selected' : '' ;
 
                         ?>
-
-                        <select class="mdb-select colorful-select dropdown-primary" name="engine_repair">
+                            <p class="text-muted">Engine Repair</p>
+                        <select class="browser-default custom-select" name="engine_repair">
                             <option value="" disabled selected>Engine Repair</option>
                             <option <?php echo $stater_1; ?> value="No">No</option>
                             <option <?php echo $stater_2; ?> value="Full">Full</option>
                             <option <?php echo $stater_3; ?> value="Half">Half</option>
-                        </select>
+                        </select><br>
                     </div>
 
                     <div>
@@ -260,11 +261,3 @@
 
 @stop
 
-<style>
-    .md-form .prefix ~ select {
-        margin-left: 3rem;
-        width: 92%;
-        width: -webkit-calc(100% - 3rem);
-        width: calc(100% - 3rem);
-    }
-</style>

@@ -4,7 +4,7 @@
 @section('content')
 
 
-    <form action="admin.vehicle.index" method="POST">
+    <form action="/admin/vehicle" method="POST">
         {{csrf_field()}}
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -15,7 +15,7 @@
                 <div class="modal-body mx-3">
                     <label for="servicing_date"  class="grey-text">Servicing Date</label>
 
-                    <input placeholder="Selected date" type="text"  name="servicing_date" id="servicing_date" class="form-control datepicker">
+                    <input placeholder="Selected date" type="text"  name="servicing_date" id="servicing_date" class="form-control nepali-calendar">
 
 
 
@@ -23,7 +23,7 @@
 
                     <div>
                     <label for="vehical_prefix" class="grey-text">Vehicle Prefix</label>
-                    <input type="text" name="vehical_prefix" id="vehical_prefix" class="form-control">
+                    <input type="text" name="vehical_prefix" id="vehical_prefix" style="text-transform: uppercase" class="form-control">
                     </div>
                     <br>
                     <div>
@@ -33,7 +33,7 @@
                    </div> <br>
 
                     <div>
-                    <select class="mdb-select colorful-select dropdown-primary" name="type">
+                    <select class="browser-default custom-select" name="type">
                         <option value="" disabled selected>Choose your Vehicle Type</option>
                         <option value="Bike">Bike</option>
                         <option value="Scooter">Scooter</option>
@@ -45,7 +45,7 @@
                     </select>
                     </div> <br>
 
-                    <hr>
+                    
 
                     <div>
                     <label for="worked_hours" class="grey-text">Worked Hours</label>
@@ -70,8 +70,8 @@
                     </div> <br>
 
                     <div>
-
-                        <select class="mdb-select colorful-select dropdown-primary" name="mobil_filter">
+                        <p class="text-muted">Mobil Filter Count</p>
+                        <select class="browser-default custom-select" name="mobil_filter">
                             <option value="" disabled selected>Mobil Filter Count</option>
                             <option value="0">0</option>
                             <option value="1">1</option>
@@ -79,65 +79,72 @@
                         </select>
 
                     </div>
-                    <hr>
+                    <br>
                     <div>
-
-                        <select class="mdb-select colorful-select dropdown-primary" name="diesel_filter">
+                        <p class="text-muted">Diesel Filter</p>
+                        <select class="browser-default custom-select" name="diesel_filter">
                             <option value="" disabled selected>Diesel Filter</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                         </select>
 
                     </div>
-                    <hr>
-                    <div>
 
-                    <select class="mdb-select colorful-select dropdown-primary" name="hydrolic_filter">
+                    <br>
+                    <div>
+                        <p class="text-muted">Hydrolic Filter</p>
+                    <select class="browser-default custom-select" name="hydrolic_filter">
                             <option value="" disabled selected>Hydrolic Filter</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                     </select>
                     </div>
                     <br>
-                    <hr>
-                    <select class="mdb-select colorful-select dropdown-primary" name="air_filter">
+                    <div>
+                        <p class="text-muted">Air Filter</p>
+                    <select class="browser-default custom-select" name="air_filter">
                             <option value="" disabled selected>Air Filter</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                     </select>
-
-                    <hr>
-                    <select class="mdb-select colorful-select dropdown-primary" name="pilot_filter">
+                    </div>
+                    <br>
+                    <div>
+                        <p class="text-muted">Pilot Filter</p>
+                    <select class="browser-default custom-select" name="pilot_filter">
                             <option value="" disabled selected>Pilot Filter</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                     </select>
+                    </div>
 
 
-                    <hr>
-
-                    <select class="mdb-select colorful-select dropdown-primary" name="transmission_filter">
+                    <br>
+                    <p class="text-muted">Transmission Filter</p>
+                    <select class="browser-default custom-select" name="transmission_filter">
                             <option value="" disabled selected>Transmission Filter</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                     </select>
-                    <hr>
 
-                    <select class="mdb-select colorful-select dropdown-primary" name="water_safety">
+                    <br>
+                    <p class="text-muted">Water Safety</p>
+                    <select class="browser-default custom-select" name="water_safety">
                             <option value="" disabled selected>Water Safety</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                     </select>
 
-                    <hr>
 
-                    <select class="mdb-select colorful-select dropdown-primary" name="breather">
+                    <br>
+                    <p class="text-muted">Breather</p>
+                    <select class="browser-default custom-select" name="breather">
                             <option value="" disabled selected>Breather</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                     </select>
-                        
-                        
+
+                    <br>
 
 
 
@@ -149,29 +156,30 @@
                     <label for="tubes" class="grey-text">Tubes</label>
                     <input type="number" name="tubes" id="tubes" class="form-control">
 
-                    <hr>
 
-
-                    <select class="mdb-select colorful-select dropdown-primary" name="spare_parts">
+                    <br>
+                    <p class="text-muted">Spare Parts</p>
+                    <select class="browser-default custom-select" name="spare_parts">
                         <option value="" disabled selected>Spare Parts</option>
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
-                    hr
 
 
-                    <select class="mdb-select colorful-select dropdown-primary" name="engine_repair">
+                    <br>
+                    <p class="text-muted">Engine Repair</p>
+                    <select class="browser-default custom-select" name="engine_repair">
                         <option value="" disabled selected>Engine Repair</option>
                         <option value="Yes">None</option>
                         <option value="Yes">Full</option>
                         <option value="Yes">Half</option>
 
                     </select>
-                    <hr>
+                    <br>
                     <div>
                     <label for="total_cost" class="grey-text">Total Cost</label>
                     <input type="number" name="total_cost" id="total_cost" class="form-control">
-                    </div> <br>
+                    </div>
 
 
 

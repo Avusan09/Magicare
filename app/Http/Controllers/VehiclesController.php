@@ -41,6 +41,7 @@ class VehiclesController extends Controller
 
         $vehicles = new Vehicles();
 
+
         $vehicles->servicing_date = request('servicing_date');
         $vehicles->vehical_prefix = request('vehical_prefix');
         $vehicles->vehical_number = request('vehical_number');
@@ -69,7 +70,7 @@ class VehiclesController extends Controller
 
         $vehicles->save();
 
-        return redirect('admin/vehicle/index')->with('status', 'Vehicle Information Added');
+        return redirect('/admin/vehicle')->with('status', 'Vehicle Information Added');
 
     }
 
