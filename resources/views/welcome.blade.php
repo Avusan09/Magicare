@@ -19,6 +19,8 @@
                             <br>
 
                         Vehicals Information : <a href="vehicals">Vehicals</a>
+                        
+                        <h5>To go to admin's dashboard : <a href="/admin/">Admin</a></h5>
                     </div>
                 </div>
             </div>
