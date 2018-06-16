@@ -12,17 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/vehicals', 'HomeController@vehicles')->name('vehicles');
-Route::get('/hey', function()
-{
-    return view('hey');
-});
+
 
 
 
@@ -32,6 +29,10 @@ Route::group(['middleware'=>['Admin']], function ()
     {
         return view('admin.dashboard');
     });
+
+
+
+
 
 
 
@@ -47,3 +48,6 @@ Route::group(['middleware'=>['Admin']], function ()
 });
 
 Route::get('/admin-user', 'AdminUserController@index');
+
+Route::get('/send', 'MailController@send');
+Route::get('/mail', 'MailController@mail');

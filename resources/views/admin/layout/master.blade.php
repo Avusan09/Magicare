@@ -115,27 +115,32 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <ul class="navbar-nav nav-flex-icons ml-auto">
-                    <li class="nav-item">
+                <ul class="nav navbar-nav ml-auto">
+                    <!-- Authentication Links -->
+                    @guest
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                        <li><a href="{{ route('register') }}">Register</a></li>
+                    @else
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
 
-                    </li>
-                    <li class="nav-item" style="padding-top: 20px">
-                        <a class="nav-link" >Admin</a>
-                    </li>
-                    <div class="dropdown" style="padding-top: 20px">
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
 
-                        <!--Trigger-->
-                        <a class="nav-link  dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><img src="{{asset('img/icons/settings.png')}}" class="thaili-icons" /> </a>
-
-
-                        <!--Menu-->
-                        <div class="dropdown-menu dropdown-primary" style="left: -100px;">
-                            <a class="dropdown-item" href="#">Settings</a>
-                            <a class="dropdown-item" href="/#/#">Profile</a>
-                            <a class="dropdown-item" href="#">Report</a>
-                            <a class="dropdown-item" href="/logout">Logout</a>
-                        </div>
-                    </div>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>i
+                                </li>
+                            </ul>
+                        </li>
+                    @endguest
                 </ul>
             </div>
 
