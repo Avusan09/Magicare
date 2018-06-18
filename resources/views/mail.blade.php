@@ -10,7 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel="stylesheet">
     <!--<![endif]-->
 
-    <title>Material Design for Bootstrap</title>
+    <title>Magicare</title>
 
     <style type="text/css">
         body {
@@ -144,7 +144,7 @@
     <tr>
         <td>
             <div style="overflow:hidden;display:none;font-size:1px;color:#ffffff;line-height:1px;font-family:Arial;maxheight:0px;max-width:0px;opacity:0;">
-                Welcome to MDB!
+               Magicare Vehicle Alert
             </div>
         </td>
     </tr>

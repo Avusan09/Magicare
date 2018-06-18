@@ -30,12 +30,6 @@ Route::group(['middleware'=>['Admin']], function ()
         return view('admin.dashboard');
     });
 
-
-
-
-
-
-
     Route::resource('/admin/stockist', 'StockistController');
     Route::resource('/admin/sales', 'SalesController');
     Route::resource('/admin/vehicle', 'VehiclesController');

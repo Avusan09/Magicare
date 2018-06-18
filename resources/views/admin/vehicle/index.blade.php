@@ -9,14 +9,14 @@
             <div class="col-lg-12">
                 <div class="jumbotron">
 
-                    <h3>Vehicles Info</h3>
+                    <h3>Vehicle Servicing Information</h3>
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
                     <a href="vehicle/create" class="btn float-right btn-default btn-rounded mb-4" >Add Vehicle Information</a>
-                    <button id="download" class="float-right btn btn-success">Download As PDF</button>
+
 
 
                 <!--Top Table UI-->
@@ -54,7 +54,7 @@
 
                             <div class="table-wrapper">
                                 <!--Table-->
-                                <table class="table table-hover table-responsive" id="myTable">
+                                <table class="table table-hover table-responsive table-bordered" id="myTable">
                                     
 
                                     <!--Table head-->
@@ -170,8 +170,9 @@
             $('#myTable').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
-                   'csv', 'excel', 'pdf', 'print'
-                ]
+                    'excel', 'pdf',
+                ],
+                "order": [[ 0, "desc" ]]
             });
         } );
     </script>

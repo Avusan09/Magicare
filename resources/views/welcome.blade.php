@@ -15,6 +15,9 @@
                         @endif
 
                         You are logged in in the front-end!
+                            @foreach($vehicle as $sks)
+                                {{$sks->servicing_date}}
+                            @endforeach
 
                             <br>
 

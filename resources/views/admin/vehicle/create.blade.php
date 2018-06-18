@@ -15,7 +15,7 @@
                 <div class="modal-body mx-3">
                     <label for="servicing_date"  class="grey-text">Servicing Date</label>
 
-                    <input placeholder="Selected date" type="text"  name="servicing_date" id="servicing_date" class="form-control nepali-calendar">
+                    <input placeholder="Selected date" required type="text"  name="servicing_date" id="servicing_date" class="form-control nepali-calendar">
 
 
 
@@ -23,17 +23,17 @@
 
                     <div>
                     <label for="vehical_prefix" class="grey-text">Vehicle Prefix</label>
-                    <input type="text" name="vehical_prefix" id="vehical_prefix" style="text-transform: uppercase" class="form-control">
+                    <input type="text" required name="vehical_prefix" id="vehical_prefix" style="text-transform: uppercase" class="form-control">
                     </div>
                     <br>
                     <div>
 
                     <label for="vehical_number" class="grey-text"> Vehicle Number</label>
-                    <input type="number" name="vehical_number" id="vehical_number" class="form-control">
+                    <input type="number" required name="vehical_number" id="vehical_number" class="form-control">
                    </div> <br>
 
                     <div>
-                    <select class="browser-default custom-select" name="type">
+                    <select required class="browser-default custom-select" name="type">
                         <option value="" disabled selected>Choose your Vehicle Type</option>
                         <option value="Bike">Bike</option>
                         <option value="Scooter">Scooter</option>
@@ -71,7 +71,7 @@
 
                     <div>
                         <p class="text-muted">Mobil Filter Count</p>
-                        <select class="browser-default custom-select" name="mobil_filter">
+                        <select required class="browser-default custom-select" name="mobil_filter">
                             <option value="" disabled selected>Mobil Filter Count</option>
                             <option value="0">0</option>
                             <option value="1">1</option>
@@ -82,7 +82,7 @@
                     <br>
                     <div>
                         <p class="text-muted">Diesel Filter</p>
-                        <select class="browser-default custom-select" name="diesel_filter">
+                        <select required class="browser-default custom-select" name="diesel_filter">
                             <option value="" disabled selected>Diesel Filter</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
@@ -93,7 +93,7 @@
                     <br>
                     <div>
                         <p class="text-muted">Hydrolic Filter</p>
-                    <select class="browser-default custom-select" name="hydrolic_filter">
+                    <select required class="browser-default custom-select" name="hydrolic_filter">
                             <option value="" disabled selected>Hydrolic Filter</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
@@ -102,7 +102,7 @@
                     <br>
                     <div>
                         <p class="text-muted">Air Filter</p>
-                    <select class="browser-default custom-select" name="air_filter">
+                    <select required class="browser-default custom-select" name="air_filter">
                             <option value="" disabled selected>Air Filter</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
@@ -111,7 +111,7 @@
                     <br>
                     <div>
                         <p class="text-muted">Pilot Filter</p>
-                    <select class="browser-default custom-select" name="pilot_filter">
+                    <select required class="browser-default custom-select" name="pilot_filter">
                             <option value="" disabled selected>Pilot Filter</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
@@ -121,7 +121,7 @@
 
                     <br>
                     <p class="text-muted">Transmission Filter</p>
-                    <select class="browser-default custom-select" name="transmission_filter">
+                    <select required class="browser-default custom-select" name="transmission_filter">
                             <option value="" disabled selected>Transmission Filter</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
@@ -129,7 +129,7 @@
 
                     <br>
                     <p class="text-muted">Water Safety</p>
-                    <select class="browser-default custom-select" name="water_safety">
+                    <select required class="browser-default custom-select" name="water_safety">
                             <option value="" disabled selected>Water Safety</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
@@ -138,7 +138,7 @@
 
                     <br>
                     <p class="text-muted">Breather</p>
-                    <select class="browser-default custom-select" name="breather">
+                    <select required class="browser-default custom-select" name="breather">
                             <option value="" disabled selected>Breather</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
@@ -159,7 +159,7 @@
 
                     <br>
                     <p class="text-muted">Spare Parts</p>
-                    <select class="browser-default custom-select" name="spare_parts">
+                    <select required class="browser-default custom-select" name="spare_parts">
                         <option value="" disabled selected>Spare Parts</option>
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
@@ -168,7 +168,7 @@
 
                     <br>
                     <p class="text-muted">Engine Repair</p>
-                    <select class="browser-default custom-select" name="engine_repair">
+                    <select required class="browser-default custom-select" name="engine_repair">
                         <option value="" disabled selected>Engine Repair</option>
                         <option value="Yes">None</option>
                         <option value="Yes">Full</option>
