@@ -11,15 +11,16 @@ use Illuminate\Support\Facades\DB;
 class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
+    public $vehicle;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($vehicle)
     {
-        //
+        $this->vehicle = $vehicle;
     }
 
     /**
@@ -29,11 +30,11 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        $vehicle = DB::table('vehicles')->get();
-        return $this->view('mail', compact('vehicle'))->to('carefreeav09@gmail.com')->from('carefreeav09@gmail.com','CarefreeAV')->subject('Vehicle Expiry Notification');
+
+        return $this->view('mail');
     }
 }
-
+//->to('carefreeav09@gmail.com')->from('carefreeav09@gmail.com','CarefreeAV')->subject('Vehicle Expiry Notification');
 //
 //send(['text'=>'mail'],['name','Abhushan'],function($message){
 //    $message->to('asmitasubedi0346@gmail.com','asmita')->subject('Vehicle Expiry Notification');
