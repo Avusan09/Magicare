@@ -63,6 +63,12 @@
                     </a>
                 </li>
 
+                <li class="list-group-item">
+                    <a href="/admin/tax" data-toggle="tooltip" data-placement="right" title="Tax Permits">
+                        <img src="{{asset('img/tax.png')}}" class="thaili-icons-lg" >
+                    </a>
+                </li>
+
 
             </ul>
         </div>
@@ -94,6 +100,7 @@
                 <a href="/admin/stockist"><li class="list-group-item"><img src="{{asset('img/icons/tree.png')}}" class="thaili-icons-xs" /> Stockists</li></a>
 
                 <a href="/admin/vehicle" class="list-group-item"><img src="{{asset('img/icons/vehicle.png')}}" class="thaili-icons" />      Vehicles</a>
+                <a href="/admin/tax" class="list-group-item"><img src="{{asset('img/tax.png')}}" class="thaili-icons" />      Tax</a>
                 <a href="" class="list-group-item"><img src="{{asset('img/icons/settings.png')}}" class="thaili-icons" />     Settings</a>
 
             </ul>

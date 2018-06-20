@@ -1,6 +1,6 @@
 @extends('admin.layout.master')
-@section('dashboard','Stockist')
-@section('title','| Vehicle Info')
+@section('dashboard','Tax Permit')
+@section('title','| Tax Permit Information')
 @section('content')
 
 
@@ -9,23 +9,17 @@
             <div class="col-lg-12">
                 <div class="jumbotron">
 
-                    <h3>Vehicle Servicing Information</h3>
+                    <h3>Tax Permit and Insurance Information</h3>
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a href="vehicle/create" class="btn float-right btn-default btn-rounded mb-4" >Add Vehicle Information</a>
+                    <a href="tax/create" class="btn float-right btn-default btn-rounded mb-4" >Add Tax/Insurance Information</a>
 
-
-
-                <!--Top Table UI-->
                     <div class="row" style="width: 100%">
 
                     </div>
-
-
-                    <!--Top Table UI-->
 
                     <div class="card card-cascade narrower">
 
@@ -38,7 +32,7 @@
                             <div class="table-wrapper">
                                 <!--Table-->
                                 <table class="table table-hover table-responsive table-bordered" id="myTable">
-                                    
+
 
                                     <!--Table head-->
                                     <thead class="mdb-color darken-3 white-text">
@@ -78,47 +72,47 @@
 
                                     <!--Table body-->
                                     <tbody>
-                                    @foreach($vehicle as $sks)
-                                        <tr>
+                                    {{--@foreach($vehicle as $sks)--}}
+                                        {{--<tr>--}}
 
-                                            <td class="text-center">{{$sks->servicing_date}}</td>
-                                            <td class="text-center text-uppercase">{{$sks->vehical_prefix}}</td>
-                                            <td class="text-center">{{$sks->vehical_number}}</td>
+                                            {{--<td class="text-center">{{$sks->servicing_date}}</td>--}}
+                                            {{--<td class="text-center text-uppercase">{{$sks->vehical_prefix}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->vehical_number}}</td>--}}
 
-                                            <td class="text-center">{{$sks->type}}</td>
-                                            <td class="text-center">{{$sks->worked_hours}}</td>
-                                            <td class="text-center">{{$sks->mobil}}</td>
-                                            <td class="text-center">{{$sks->transmission_oil}}</td>
-                                            <td class="text-center">{{$sks->hydrolic}}</td>
-                                            <td class="text-center">{{$sks->mobil_filter}}</td>
-                                            <td class="text-center">{{$sks->diesel_filter}}</td>
-                                            <td class="text-center">{{$sks->hydrolic_filter}}</td>
-                                            <td class="text-center">{{$sks->air_filter}}</td>
-                                            <td class="text-center">{{$sks->pilot_filter}}</td>
-                                            <td class="text-center">{{$sks->transmission_filter}}</td>
-                                            <td class="text-center">{{$sks->water_safety}}</td>
-                                            <td class="text-center">{{$sks->breather}}</td>
-                                            <td class="text-center">{{$sks->tyres}}</td>
-                                            <td class="text-center">{{$sks->tubes}}</td>
-                                            <td class="text-center">{{$sks->spare_parts}}</td>
-                                            <td class="text-center">{{$sks->engine_repair}}</td>
-                                            <td class="text-center">{{$sks->total_cost}}</td>
-                                            <td class="text-center">{{$sks->remarks}} </td>
+                                            {{--<td class="text-center">{{$sks->type}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->worked_hours}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->mobil}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->transmission_oil}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->hydrolic}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->mobil_filter}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->diesel_filter}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->hydrolic_filter}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->air_filter}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->pilot_filter}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->transmission_filter}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->water_safety}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->breather}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->tyres}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->tubes}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->spare_parts}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->engine_repair}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->total_cost}}</td>--}}
+                                            {{--<td class="text-center">{{$sks->remarks}} </td>--}}
 
 
 
-                                            <td><a href="/admin/vehicle/{{$sks->id}}/edit" class="btn btn-warning float-right " > <i class="fa fa-edit"></i></a>
+                                            {{--<td><a href="/admin/vehicle/{{$sks->id}}/edit" class="btn btn-warning float-right " > <i class="fa fa-edit"></i></a>--}}
 
-                                            </td>
-                                            <td>
-                                                <form action="/admin/vehicle/{{$sks->id}}" method="POST">
-                                                    {{csrf_field()}}
-                                                    <input type="hidden" name="_method" value="DELETE">
-                                                    <input type="submit" value="Delete" class="btn btn-block btn-danger float-right" onclick="return  confirm('Are you sure you want to delete this entry?')">
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                                            {{--</td>--}}
+                                            {{--<td>--}}
+                                                {{--<form action="/admin/vehicle/{{$sks->id}}" method="POST">--}}
+                                                    {{--{{csrf_field()}}--}}
+                                                    {{--<input type="hidden" name="_method" value="DELETE">--}}
+                                                    {{--<input type="submit" value="Delete" class="btn btn-block btn-danger float-right" onclick="return  confirm('Are you sure you want to delete this entry?')">--}}
+                                                {{--</form>--}}
+                                            {{--</td>--}}
+                                        {{--</tr>--}}
+                                    {{--@endforeach--}}
 
                                     </tbody>
                                     <!--Table body-->
@@ -135,7 +129,7 @@
 
 
                                 <!--Pagination -->
-                                
+
                                 <!--/Pagination -->
 
                             </div>

@@ -33,12 +33,15 @@ Route::group(['middleware'=>['Admin']], function ()
     Route::resource('/admin/stockist', 'StockistController');
     Route::resource('/admin/sales', 'SalesController');
     Route::resource('/admin/vehicle', 'VehiclesController');
+    Route::resource('/admin/tax', 'TaxController');
 
     Route::patch('/admin/vehicle/{id}', 'VehiclesController@update');
+    Route::patch('/admin/tax/{id}', 'TaxController@update');
 
     Route::post('/admin/stockist/create', 'StockistController@store');
     Route::post('/admin/vehicle/create', 'VehiclesController@store');
     Route::post('/admin/sales/create', 'SalesController@store');
+    Route::post('/admin/tax/create', 'TaxController@store');
 });
 
 Route::get('/admin-user', 'AdminUserController@index');
