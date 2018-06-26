@@ -10,7 +10,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold">Update Vehical Information</h4>
+                    <h4 class="modal-title w-100 font-weight-bold">Update Vehicle Information</h4>
 
                 </div>
                 <div class="modal-body mx-3">

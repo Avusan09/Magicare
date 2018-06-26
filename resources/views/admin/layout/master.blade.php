@@ -8,9 +8,9 @@
     <title>Admin @yield('title')</title>
     {{--<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">--}}
     <link rel="stylesheet" href="{{asset('css/compiled.min.css')}}">
-
-    <link rel="stylesheet" href="{{asset('css/nepali.datepicker.v2.2.min.css')}}">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/jszip-2.5.0/dt-1.10.17/b-1.5.2/b-flash-1.5.2/b-html5-1.5.2/r-2.2.2/rr-1.2.4/sc-5.04.4/sl-1.2.6/datatables.min.css"/>
+    <link rel="stylesheet" href="{{asset('css/nepali.datepicker.v2.2.min.css')}}">
+
 
     <link rel="stylesheet" href="{{asset('css/thaili.css')}}">
     <link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
