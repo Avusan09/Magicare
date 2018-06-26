@@ -22,13 +22,13 @@
 
                     <div>
                         <label for="vehicle_prefix" class="grey-text">Vehicle Prefix</label>
-                        <input type="text" required name="vehicle_prefix" id="vehicle_prefix" style="text-transform: uppercase" class="form-control">
+                        <input type="number" required  required name="vehicle_prefix" id="vehicle_prefix" style="text-transform: uppercase" class="form-control">
                     </div>
                     <br>
                     <div>
 
                         <label for="vehicle_number" class="grey-text"> Vehicle Number</label>
-                        <input type="number" required name="vehicle_number" id="vehicle_number" class="form-control">
+                        <input type="number" required  required name="vehicle_number" id="vehicle_number" class="form-control">
                     </div> <br>
 
 
@@ -50,14 +50,14 @@
 
                     <div>
                         <label for="chasis" class="grey-text">Chasis Number</label>
-                        <input type="text" name="chasis" id="chasis" class="form-control">
+                        <input type="number" required  name="chasis" id="chasis" class="form-control">
                     </div> <br>
 
 
 
                     <div>
                         <label for="engine" class="grey-text">Engine No</label>
-                        <input type="text" name="engine" id="engine" class="form-control">
+                        <input type="number" required  name="engine" id="engine" class="form-control">
                     </div> <br>
 
                     <label for="rt_date"  class="grey-text">Road Tax Date</label>
@@ -66,17 +66,17 @@
 
                     <div>
                         <label for="rt_bill" class="grey-text">Road Tax Bill No.</label>
-                        <input type="number" name="rt_bill" id="rt_bill" class="form-control">
+                        <input type="number" required  name="rt_bill" id="rt_bill" class="form-control">
                     </div> <br>
 
                     <div>
                         <label for="rt_fiscal" class="grey-text">Road Tax Fiscal year</label>
-                        <input type="number" name="rt_fiscal" id="rt_fiscal" class="form-control">
+                        <input type="number" required  name="rt_fiscal" id="rt_fiscal" class="form-control">
                     </div> <br>
 
                     <div>
                         <label for="rt_amount" class="grey-text">Road Tax Amount</label>
-                        <input type="number" name="rt_amount" id="rt_amount" class="form-control">
+                        <input type="number" required  name="rt_amount" id="rt_amount" class="form-control">
                     </div> <br>
                     {{-----------------------------------------------------------------------------------------------------------------}}
 
@@ -86,17 +86,17 @@
 
                     <div>
                         <label for="ret_bill" class="grey-text">Renewal Tax Bill No.</label>
-                        <input type="number" name="ret_bill" id="ret_bill" class="form-control">
+                        <input type="number" required  name="ret_bill" id="ret_bill" class="form-control">
                     </div> <br>
 
                     <div>
                         <label for="ret_fiscal" class="grey-text">Renewal Tax Fiscal year</label>
-                        <input type="number" name="ret_fiscal" id="ret_fiscal" class="form-control">
+                        <input type="number" required  name="ret_fiscal" id="ret_fiscal" class="form-control">
                     </div> <br>
 
                     <div>
                         <label for="ret_amount" class="grey-text">Renewal Tax Amount</label>
-                        <input type="number" name="ret_amount" id="ret_amount" class="form-control">
+                        <input type="number" required  name="ret_amount" id="ret_amount" class="form-control">
                     </div> <br>
 {{-----------------------------------------------------------------------------------------------------------------}}
                     <label for="rp_date"  class="grey-text">Road Permit Date</label>
@@ -105,17 +105,17 @@
 
                     <div>
                         <label for="rp_bill" class="grey-text">Road Permit Bill No.</label>
-                        <input type="number" name="rp_bill" id="rp_bill" class="form-control">
+                        <input type="number" required  name="rp_bill" id="rp_bill" class="form-control">
                     </div> <br>
 
                     <div>
                         <label for="rp_fiscal" class="grey-text">Road Permit Fiscal year</label>
-                        <input type="number" name="rp_fiscal" id="rp_fiscal" class="form-control">
+                        <input type="number" required  name="rp_fiscal" id="rp_fiscal" class="form-control">
                     </div> <br>
 
                     <div>
                         <label for="rp_amount" class="grey-text">Road Permit Amount</label>
-                        <input type="number" name="rp_amount" id="rp_amount" class="form-control">
+                        <input type="number" required  name="rp_amount" id="rp_amount" class="form-control">
                     </div> <br>
 
                     <label for="insurance_start"  class="grey-text">Insurance Start Date</label>
@@ -130,25 +130,25 @@
 
                     <div>
                         <label for="policy" class="grey-text">Policy No.</label>
-                        <input type="text" name="policy" id="policy" class="form-control">
+                        <input type="number" required  name="policy" id="policy" class="form-control">
                     </div> <br>
 
                     <div>
                         <label for="insurance_company" class="grey-text">Insurance Company</label>
-                        <input type="text" name="insurance_company" id="insurance_company" class="form-control">
+                        <input type="number" required  name="insurance_company" id="insurance_company" class="form-control">
                     </div>
 
                     <br>
 
                     <div>
                         <label for="insured_amount" class="grey-text">Insured Amount</label>
-                        <input type="number" name="insured_amount" id="insured_amount" class="form-control">
+                        <input type="number" required  name="insured_amount" id="insured_amount" class="form-control">
                     </div> <br>
 
 
 
                     <div class="md-form">
-                        <textarea type="text" id="remarks" class="md-textarea form-control" rows="5" name="remarks"></textarea>
+                        <textarea type="number" required  id="remarks"  class="md-textarea form-control" rows="5" name="remarks"></textarea>
                         <label for="remarks">Remarks</label>
                     </div> <br>
 

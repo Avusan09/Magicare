@@ -20,6 +20,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/vehicals', 'HomeController@vehicles')->name('vehicles');
 
+Route::resource('/test/', 'TestController');
+
+
 
 
 
@@ -34,6 +37,7 @@ Route::group(['middleware'=>['Admin']], function ()
     Route::resource('/admin/sales', 'SalesController');
     Route::resource('/admin/vehicle', 'VehiclesController');
     Route::resource('/admin/tax', 'TaxController');
+
 
     Route::patch('/admin/vehicle/{id}', 'VehiclesController@update');
     Route::patch('/admin/tax/{id}', 'TaxController@update');
