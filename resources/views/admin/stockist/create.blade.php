@@ -45,3 +45,12 @@
 </form>
 </div>
 <br><br>
+<style>
+    .md-form input[type="text"], .md-form input[type="email"], .md-form input[type="password"], .md-form input[type="number"], .md-form input[type="textarea"] {
+        height: 30px !important;
+        border: 2px solid aliceblue;
+        padding: 10px;
+        font-weight: 700;
+        width: 85%;
+    }
+</style>

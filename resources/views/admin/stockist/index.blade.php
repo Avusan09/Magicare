@@ -39,7 +39,7 @@
 
                             <div class="table-wrapper">
                                 <!--Table-->
-                                <table class="table table-hover mb-0 table-responsive-lg" id="stockistTable">
+                                <table class="table table-hover mb-0 table-responsive" id="stockistTable">
 
                                     <!--Table head-->
                                     <thead class="mdb-color darken-3 white-text">
