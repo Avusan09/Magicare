@@ -6,8 +6,8 @@
 
     <div class="content">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="jumbotron">
+            <div class="col-lg-12 p-5">
+
 
                     <h3>Vehicle Servicing Information</h3>
                     @if (session('status'))
@@ -53,9 +53,12 @@
                                         <th class="th-sm"><a>Mobil</a></th>
                                         <th class="th-sm"><a>Transmission Oil</a></th>
                                         <th class="th-sm"><a>Hydrolic</a></th>
+                                        <th class="th-sm"><a>Coolent Water</a></th>
+                                        <th class="th-sm"><a>Coolent Filter</a></th>
                                         <th class="th-sm"><a>Mobil Filter</a></th>
                                         <th class="th-sm"><a>Diesel Filter</a></th>
                                         <th class="th-sm"><a>Hydrolic Filter</a></th>
+
                                         <th class="th-sm"><a>Air Filter</a></th>
                                         <th class="th-sm"><a>Pilot Filter</a></th>
                                         <th class="th-sm"><a>Transmission Filter</a></th>
@@ -66,6 +69,7 @@
                                         <th class="th-sm"><a>Spare Parts</a></th>
                                         <th class="th-sm"><a>Engine Repair</a></th>
                                         <th class="th-sm"><a>Total Cost</a></th>
+                                        <th class="th-sm"><a>Expiry Date</a></th>
                                         <th class="th-sm"><a>Remarks</a></th>
                                         <th class="th-sm"><a></a></th>
                                         <th class="th-sm"><a></a></th>
@@ -90,6 +94,8 @@
                                             <td class="text-center">{{$sks->mobil}}</td>
                                             <td class="text-center">{{$sks->transmission_oil}}</td>
                                             <td class="text-center">{{$sks->hydrolic}}</td>
+                                            <td class="text-center">{{$sks->coolent_water}}</td>
+                                            <td class="text-center">{{$sks->coolent_filter}}</td>
                                             <td class="text-center">{{$sks->mobil_filter}}</td>
                                             <td class="text-center">{{$sks->diesel_filter}}</td>
                                             <td class="text-center">{{$sks->hydrolic_filter}}</td>
@@ -103,6 +109,8 @@
                                             <td class="text-center">{{$sks->spare_parts}}</td>
                                             <td class="text-center">{{$sks->engine_repair}}</td>
                                             <td class="text-center">{{$sks->total_cost}}</td>
+                                            <td class="text-center">{{$sks->expiry_date}}</td>
+
                                             <td class="text-center">{{$sks->remarks}} </td>
 
 
@@ -143,7 +151,7 @@
 
                         </div>
                     </div>
-                </div>
+
             </div>
         </div>
     </div>

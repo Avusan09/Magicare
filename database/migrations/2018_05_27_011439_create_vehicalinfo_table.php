@@ -26,8 +26,10 @@ class CreateVehicalinfoTable extends Migration
             $table->integer('mobil');
             $table->integer('transmission_oil');
             $table->integer('hydrolic');
+            $table->integer('coolent_water');
+            $table->string('coolent_filter');
             $table->string('mobil_filter');
-            $table->string('diesel_filter')->nullable();
+            $table->string('diesel_filter')->nullable(true);
             $table->string('hydrolic_filter');
             $table->string('air_filter');
             $table->string('pilot_filter');
@@ -40,6 +42,7 @@ class CreateVehicalinfoTable extends Migration
             $table->string('engine_repair');
             $table->string('total_cost');
             $table->string('remarks');
+            $table->string('expiry_date')->nullable(true);
             $table->timestamps();
 
 

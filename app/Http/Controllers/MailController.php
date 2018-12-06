@@ -14,7 +14,10 @@ class MailController extends Controller
     public function mail()
     {
         $vehicle = DB::table('vehicles')->get();
-        return view('/mail', compact('vehicle'));
+
+
+//        echo (date_create($vehicle[0]->expiry_date) - date_create($vehicle[0]->servicing_date));
+        return view('/mail', compact('vehicle' ));
     }
 
 

@@ -35,6 +35,10 @@ Route::group(['middleware'=>['Admin']], function ()
 
     Route::resource('/admin/stockist', 'StockistController');
     Route::resource('/admin/sales', 'SalesController');
+    Route::get('/sales/create', function()
+    {
+        return view('sales.create');
+    });
     Route::resource('/admin/vehicle', 'VehiclesController');
     Route::resource('/admin/tax', 'TaxController');
 

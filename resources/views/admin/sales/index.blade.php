@@ -8,18 +8,16 @@
             <div class="col-lg-12">
                 <div class="jumbotron">
 
-                    
-                    <a href="#" class="float-left">Manage Sales</a>
+
+                    <a href="sales/create" class="float-left">Add Sales</a>
                     <a href="" class="btn float-right btn-default btn-rounded mb-4" data-toggle="modal" data-target="#">Generate Report</a>
 
-                @if (session('status'))
+                    @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a href="" class="btn float-right btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalContactForm">Add Sales</a>
-                @include('/admin/sales/create')
-                <!--Top Table UI-->
+                    <!--Top Table UI-->
 
 
                     <div class="input-group md-form form-sm form-1 pl-0">
@@ -113,50 +111,6 @@
 
                             <hr class="my-0">
 
-                            <!--Bottom Table UI-->
-                            <div class="d-flex justify-content-between">
-
-                                <!--Name-->
-
-
-                                <!--Pagination -->
-                                <nav class="my-4 float-right">
-                                    <ul class="pagination pagination-circle pg-blue mb-0">
-
-                                        <!--First-->
-                                        <li class="page-item disabled"><a class="page-link">First</a></li>
-
-                                        <!--Arrow left-->
-                                        <li class="page-item disabled">
-                                            <a class="page-link" aria-label="Previous">
-                                                <span aria-hidden="true">&laquo;</span>
-                                                <span class="sr-only">Previous</span>
-                                            </a>
-                                        </li>
-
-                                        <!--Numbers-->
-                                        <li class="page-item active"><a class="page-link">1</a></li>
-                                        <li class="page-item"><a class="page-link">2</a></li>
-                                        <li class="page-item"><a class="page-link">3</a></li>
-                                        <li class="page-item"><a class="page-link">4</a></li>
-                                        <li class="page-item"><a class="page-link">5</a></li>
-
-                                        <!--Arrow right-->
-                                        <li class="page-item">
-                                            <a class="page-link" aria-label="Next">
-                                                <span aria-hidden="true">&raquo;</span>
-                                                <span class="sr-only">Next</span>
-                                            </a>
-                                        </li>
-
-                                        <!--First-->
-                                        <li class="page-item"><a class="page-link">Last</a></li>
-
-                                    </ul>
-                                </nav>
-                                <!--/Pagination -->
-
-                            </div>
                             <!--Bottom Table UI-->
 
                         </div>

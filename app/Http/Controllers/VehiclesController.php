@@ -17,6 +17,7 @@ class VehiclesController extends Controller
     public function index()
     {
         $vehicle = DB::table('vehicles')->get();
+
         return view('admin.vehicle.index', compact('vehicle'));
     }
 
@@ -53,6 +54,8 @@ class VehiclesController extends Controller
         $vehicles->mobil_filter = request('mobil_filter');
         $vehicles->diesel_filter = request('diesel_filter');
         $vehicles->hydrolic_filter = request('hydrolic_filter');
+        $vehicles->coolent_water = request('coolent_water');
+        $vehicles->coolent_filter = request('coolent_filter');
         $vehicles->air_filter = request('air_filter');
         $vehicles->pilot_filter = request('pilot_filter');
         $vehicles->transmission_filter = request('transmission_filter');
@@ -63,7 +66,9 @@ class VehiclesController extends Controller
         $vehicles->spare_parts = request('spare_parts');
         $vehicles->engine_repair = request('engine_repair');
         $vehicles->total_cost = request('total_cost');
+        $vehicles->expiry_date = request('expiry_date');
         $vehicles->remarks = request('remarks');
+
 
 
 
@@ -120,6 +125,8 @@ class VehiclesController extends Controller
         $vehicles->mobil_filter = $request->get('mobil_filter');
         $vehicles->diesel_filter = $request->get('diesel_filter');
         $vehicles->hydrolic_filter = $request->get('hydrolic_filter');
+        $vehicles->coolent_filter = $request->get('coolent_filter');
+        $vehicles->coolent_water = $request->get('coolent_water');
         $vehicles->air_filter = $request->get('air_filter');
         $vehicles->pilot_filter = $request->get('pilot_filter');
         $vehicles->transmission_filter = $request->get('transmission_filter');
@@ -130,6 +137,7 @@ class VehiclesController extends Controller
         $vehicles->spare_parts = $request->get('spare_parts');
         $vehicles->engine_repair = $request->get('engine_repair');
         $vehicles->total_cost = $request->get('total_cost');
+        $vehicles->expiry_date = $request->get('expiry_date');
         $vehicles->remarks = $request->get('remarks');
         $vehicles->save();
         return redirect()->action('VehiclesController@index');
