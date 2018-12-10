@@ -4,9 +4,8 @@
 @section('content')
 
 
-    <div class="content">
         <div class="row">
-            <div class="col-lg-12 p-5">
+            <div class="col-lg-12">
 
 
                     <h3>Vehicle Servicing Information</h3>
@@ -154,7 +153,7 @@
 
             </div>
         </div>
-    </div>
+
 
     <script>
         $(document).ready( function () {

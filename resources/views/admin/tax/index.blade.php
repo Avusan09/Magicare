@@ -4,10 +4,9 @@
 @section('content')
 
 
-    <div class="content">
         <div class="row">
             <div class="col-lg-12">
-                <div class="jumbotron">
+
 
                     <h3>Tax Permit and Insurance Information</h3>
                     @if (session('status'))
@@ -39,27 +38,29 @@
                                     <tr>
 
 
-                                        <th class="th-sm"><a>Servicing Date</a></th>
+                                        <th class="th-sm"><a>Date</a></th>
                                         <th class="th-sm"><a>Vehicle Prefix</a></th>
-                                        <th class="th-sm"><a>Number</a></th>
-                                        <th class="th-sm"><a>Type</a></th>
-                                        <th class="th-sm"><a>Worked Hours</a></th>
-                                        <th class="th-sm"><a>Mobil</a></th>
-                                        <th class="th-sm"><a>Transmission Oil</a></th>
-                                        <th class="th-sm"><a>Hydrolic</a></th>
-                                        <th class="th-sm"><a>Mobil Filter</a></th>
-                                        <th class="th-sm"><a>Diesel Filter</a></th>
-                                        <th class="th-sm"><a>Hydrolic Filter</a></th>
-                                        <th class="th-sm"><a>Air Filter</a></th>
-                                        <th class="th-sm"><a>Pilot Filter</a></th>
-                                        <th class="th-sm"><a>Transmission Filter</a></th>
-                                        <th class="th-sm"><a>Water Safety</a></th>
-                                        <th class="th-sm"><a>Breather</a></th>
-                                        <th class="th-sm"><a>Tyres</a></th>
-                                        <th class="th-sm"><a>Tubes</a></th>
-                                        <th class="th-sm"><a>Spare Parts</a></th>
-                                        <th class="th-sm"><a>Engine Repair</a></th>
-                                        <th class="th-sm"><a>Total Cost</a></th>
+                                        <th class="th-sm"><a>Vehicle Number</a></th>
+                                        <th class="th-sm"><a>Vehicle Type</a></th>
+                                        <th class="th-sm"><a>Chasis</a></th>
+                                        <th class="th-sm"><a>Engine</a></th>
+                                        <th class="th-sm"><a>RT Date</a></th>
+                                        <th class="th-sm"><a>RT Bill</a></th>
+                                        <th class="th-sm"><a>RT Fiscal</a></th>
+                                        <th class="th-sm"><a>RT Amount</a></th>
+                                        <th class="th-sm"><a>RET Date</a></th>
+                                        <th class="th-sm"><a>RET Bill</a></th>
+                                        <th class="th-sm"><a>RET Fiscal</a></th>
+                                        <th class="th-sm"><a>RET Amount</a></th>
+                                        <th class="th-sm"><a>RP Date</a></th>
+                                        <th class="th-sm"><a>RP Bill</a></th>
+                                        <th class="th-sm"><a>RP Fiscal</a></th>
+                                        <th class="th-sm"><a>RP Amount</a></th>
+                                        <th class="th-sm"><a>Insurance Start Date</a></th>
+                                        <th class="th-sm"><a>Insurance End Date</a></th>
+                                        <th class="th-sm"><a>Policy</a></th>
+                                        <th class="th-sm"><a>Insurance Company</a></th>
+                                        <th class="th-sm"><a>Insured Amount</a></th>
                                         <th class="th-sm"><a>Remarks</a></th>
                                         <th class="th-sm"><a></a></th>
                                         <th class="th-sm"><a></a></th>
@@ -140,7 +141,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
 
     <script>
         $(document).ready( function () {

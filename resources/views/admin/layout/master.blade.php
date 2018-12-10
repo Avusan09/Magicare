@@ -1,196 +1,357 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Admin @yield('title')</title>
-    {{--<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">--}}
-    <link rel="stylesheet" href="{{asset('css/compiled.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/jszip-2.5.0/dt-1.10.17/b-1.5.2/b-flash-1.5.2/b-html5-1.5.2/r-2.2.2/rr-1.2.4/sc-5.04.4/sl-1.2.6/datatables.min.css"/>
-    <link rel="stylesheet" href="{{asset('css/nepali.datepicker.v2.2.min.css')}}">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    {{--<link rel="stylesheet" href="{{asset('css/compiled.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('css/material-dashboard.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/datatables.min.css')}}">
 
-
-    <link rel="stylesheet" href="{{asset('css/thaili.css')}}">
-    <link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
 
-
-
-
-
-
 </head>
+
 <body>
-<section>
-    <div id="mySidenav" class="sidenav z-depth-3">
+<div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
+        <!--
+          Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-        <div id="dashboard-shrinked" style="display:none;">
-            <div class="thaili-logo-dashboard-big" >
-                <a href="/">
-                    <img src="{{asset('img/mini.png')}}" id="dashboard-logo" class="grails-logo wow fadeIn" style="padding-left:10px;height: 60px;"/>
-                </a>
-            </div>
-
-            <hr style="border: 1px solid white">
-
-            <ul class="list-group list-group-flush">
-
-                <li class="list-group-item">
-                    <a href="/admin" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                        <img src="{{asset('img/icons/01.png')}}" class="thaili-icons-lg" />
+          Tip 2: you can also add an image using data-image tag
+      -->
+        <div class="logo">
+            <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                MCIS
+            </a>
+        </div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="/admin/" class="nav-link">
+                        <i class="material-icons red-text">dashboard</i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="/admin/vehicle" class="nav-link">
+                        <i class="material-icons blue-text">local_shipping</i>
+                        Vehicles Information
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="/admin/tax" class="nav-link">
+                        <i class="material-icons green-text">library_books</i>
+                        Tax Information
                     </a>
                 </li>
 
-                <li class="list-group-item">
-                    <a href="/admin/sales" data-toggle="tooltip" data-placement="right" title="Manage Sales">
-                        <img src="{{asset('img/icons/03.png')}}" class="thaili-icons-lg" >
+                <li class="nav-item ">
+                    <a href="/admin/inventory" class="nav-link">
+                        <i class="material-icons cyan-text">all_inbox</i>
+                        Inventory Management
                     </a>
                 </li>
-
-                <li class="list-group-item">
-                    <a href="/admin/stockist" data-toggle="tooltip" data-placement="right" title="Manage Stockists">
-                        <img src="{{asset('img/icons/tree.png')}}" class="thaili-icons-lg" >
-                    </a>
-                </li>
-
-
-
-                <li class="list-group-item">
-                    <a href="/admin/vehicle" data-toggle="tooltip" data-placement="right" title="Vehicle">
-                        <img src="{{asset('img/icons/vehicle.png')}}" class="thaili-icons-lg" >
-                    </a>
-                </li>
-
-                <li class="list-group-item">
-                    <a href="/admin/tax" data-toggle="tooltip" data-placement="right" title="Tax Permits">
-                        <img src="{{asset('img/tax.png')}}" class="thaili-icons-lg" >
-                    </a>
-                </li>
-
 
             </ul>
         </div>
-
-        <div id="dashboard-expanded" class="wow fadeIn" >
-            <div class="nav-link">
-                <div class="profile-image">
-                    <a href="/">
-                        <img src="{{asset('img/magicare.png')}}" id="dashboard-logo"  style="height: 150px;margin-left: -25px;" class="grails-logo wow fadeIn"/>
-                    </a>
-                    <span class="online-status online"></span>
+    </div>
+    <div class="main-panel">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+            <div class="container-fluid">
+                <div class="navbar-wrapper">
+                    <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
                 </div>
-                <br>
-
-            </div>
-
-
-            <ul class="list-group list-group-flush"  class="wow fadeIn">
-                <a href="/admin/" class="list-group-item">
-                    <img src="{{asset('img/icons/01.png')}}" class="thaili-icons" />
-                    Dashboard
-                </a>
-
-
-
-                <a href="/admin/sales"><li class="list-group-item"> <img src="{{asset('img/icons/03.png')}}" class="thaili-icons-xs" /> Sales</li></a>
-
-                <!-- Accordion card -->
-                <a href="/admin/stockist"><li class="list-group-item"><img src="{{asset('img/icons/tree.png')}}" class="thaili-icons-xs" /> Stockists</li></a>
-
-                <a href="/admin/vehicle" class="list-group-item"><img src="{{asset('img/icons/vehicle.png')}}" class="thaili-icons" />      Vehicles</a>
-                <a href="/admin/tax" class="list-group-item"><img src="{{asset('img/tax.png')}}" class="thaili-icons" />      Tax</a>
-                <a href="" class="list-group-item"><img src="{{asset('img/icons/settings.png')}}" class="thaili-icons" />     Settings</a>
-
-            </ul>
-        </div>
-
-
-    </div>
-
-    <div id="main">
-
-        <nav class="navbar  navbar-expand-lg navbar-dark black scrolling-navbar navbar-75" >
-            <div style="font-size:30px;cursor:pointer;padding-right: 10px" class="primary-color-gold" onclick="toggleNav()">&#9776; </div>
-
-
-            <a class="navbar-brand" href="/admin"><strong>Admin Dashboard</strong></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                <ul class="nav navbar-nav ml-auto">
-                    <!-- Authentication Links -->
-                    @guest
-                        <li><a href="{{ route('login') }}">Login</a></li>
-                        <li><a href="{{ route('register') }}">Register</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon icon-bar"></span>
+                    <span class="navbar-toggler-icon icon-bar"></span>
+                    <span class="navbar-toggler-icon icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end">
+                    <form class="navbar-form">
+                        <div class="input-group no-border">
+                            <input type="text" value="" class="form-control" placeholder="Search...">
+                            <button type="submit" class="btn btn-default btn-round btn-just-icon">
+                                <i class="material-icons">search</i>
+                                <div class="ripple-container"></div>
+                            </button>
+                        </div>
+                    </form>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)">
+                                <i class="material-icons">dashboard</i>
+                                <p class="d-lg-none d-md-block">
+                                    Stats
+                                </p>
                             </a>
-
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>i
-                                </li>
-                            </ul>
                         </li>
-                    @endguest
-                </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="javscript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">notifications</i>
+                                <span class="notification">5</span>
+                                <p class="d-lg-none d-md-block">
+                                    Some Actions
+                                </p>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="javascript:void(0)">Mike John responded to your email</a>
+                                <a class="dropdown-item" href="javascript:void(0)">You have 5 new tasks</a>
+                                <a class="dropdown-item" href="javascript:void(0)">You're now friend with Andrew</a>
+                                <a class="dropdown-item" href="javascript:void(0)">Another Notification</a>
+                                <a class="dropdown-item" href="javascript:void(0)">Another One</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)">
+                                <i class="material-icons">person</i>
+                                <p class="d-lg-none d-md-block">
+                                    Account
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-
         </nav>
-
-        <div class="container-fluid dashboard-vendor" >
-            @yield('content')
+        <!-- End Navbar -->
+        <div class="content">
+            <div class="container-fluid">
+                @yield('content')
+            </div>
         </div>
-
+        {{--<footer class="footer">--}}
+            {{--<div class="container-fluid">--}}
+                {{--<nav class="float-left">--}}
+                    {{--<ul>--}}
+                        {{--<li>--}}
+                            {{--<a href="https://www.creative-tim.com">--}}
+                                {{--Creative Tim--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<a href="https://creative-tim.com/presentation">--}}
+                                {{--About Us--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<a href="http://blog.creative-tim.com">--}}
+                                {{--Blog--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<a href="https://www.creative-tim.com/license">--}}
+                                {{--Licenses--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                    {{--</ul>--}}
+                {{--</nav>--}}
+                {{--<div class="copyright float-right" id="date">--}}
+                    {{--, made with <i class="material-icons">favorite</i> by--}}
+                    {{--<a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</footer>--}}
 
     </div>
+</div>
+
+<!--   Core JS Files   -->
+
+<script src="{{asset('js/popper.min.js')}}"></script>
+<script src="{{asset('js/bootstrap-material-design.min.js')}}"></script>
+<script src="{{asset('js/datatables.min.js')}}"></script>
+
+{{--<script src="https://unpkg.com/default-passive-events"></script>--}}
+<script src="{{asset('js/perfect-scrollbar.jquery.min.js')}}"></script>
+{{--<!-- Place this tag in your head or just before your close body tag. -->--}}
+{{--<script async defer src="https://buttons.github.io/buttons.js"></script>--}}
+{{--<!--  Google Maps Plugin    -->--}}
+{{--<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>--}}
+{{--<!-- Chartist JS -->--}}
+<script src="{{asset('js/chartist.min.js')}}"></script>
+{{--<!--  Notifications Plugin    -->--}}
+{{--<script src="../assets/js/plugins/bootstrap-notify.js"></script>--}}
+{{--<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->--}}
+<script src="{{asset('js/material-dashboard.min.js')}}"></script>
+
+<script>
+    $(document).ready(function() {
+        $().ready(function() {
+            $sidebar = $('.sidebar');
+
+            $sidebar_img_container = $sidebar.find('.sidebar-background');
+
+            $full_page = $('.full-page');
+
+            $sidebar_responsive = $('body > .navbar-collapse');
+
+            window_width = $(window).width();
+
+            $('.fixed-plugin a').click(function(event) {
+                // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
+                if ($(this).hasClass('switch-trigger')) {
+                    if (event.stopPropagation) {
+                        event.stopPropagation();
+                    } else if (window.event) {
+                        window.event.cancelBubble = true;
+                    }
+                }
+            });
+
+            $('.fixed-plugin .active-color span').click(function() {
+                $full_page_background = $('.full-page-background');
+
+                $(this).siblings().removeClass('active');
+                $(this).addClass('active');
+
+                var new_color = $(this).data('color');
+
+                if ($sidebar.length != 0) {
+                    $sidebar.attr('data-color', new_color);
+                }
+
+                if ($full_page.length != 0) {
+                    $full_page.attr('filter-color', new_color);
+                }
+
+                if ($sidebar_responsive.length != 0) {
+                    $sidebar_responsive.attr('data-color', new_color);
+                }
+            });
+
+            $('.fixed-plugin .background-color .badge').click(function() {
+                $(this).siblings().removeClass('active');
+                $(this).addClass('active');
+
+                var new_color = $(this).data('background-color');
+
+                if ($sidebar.length != 0) {
+                    $sidebar.attr('data-background-color', new_color);
+                }
+            });
+
+            $('.fixed-plugin .img-holder').click(function() {
+                $full_page_background = $('.full-page-background');
+
+                $(this).parent('li').siblings().removeClass('active');
+                $(this).parent('li').addClass('active');
 
 
+                var new_image = $(this).find("img").attr('src');
 
+                if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                    $sidebar_img_container.fadeOut('fast', function() {
+                        $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                        $sidebar_img_container.fadeIn('fast');
+                    });
+                }
 
-</section>
+                if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                    var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
 
+                    $full_page_background.fadeOut('fast', function() {
+                        $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                        $full_page_background.fadeIn('fast');
+                    });
+                }
 
+                if ($('.switch-sidebar-image input:checked').length == 0) {
+                    var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+                    var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
 
-    <script src="{{asset('js/compiled.min.js')}}"></script>
-    <script src="{{asset('js/thaili.js')}}"></script>
-    <script src="{{asset('js/extra.js')}}"></script>
+                    $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                    $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                }
 
+                if ($sidebar_responsive.length != 0) {
+                    $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
+                }
+            });
 
+            $('.switch-sidebar-image input').change(function() {
+                $full_page_background = $('.full-page-background');
 
-{{--<script src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.min.js"></script>--}}
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.0/xlsx.core.min.js"></script>--}}
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/jszip-2.5.0/dt-1.10.17/b-1.5.2/b-flash-1.5.2/b-html5-1.5.2/r-2.2.2/rr-1.2.4/sc-5.04.4/sl-1.2.6/datatables.min.js"></script>
-<script src="//cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
-<script src="//cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-<script src="//cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
-<script src="//cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
-<script src="{{asset('js/nepali.datepicker.v2.2.min.js')}}"></script>
+                $input = $(this);
 
+                if ($input.is(':checked')) {
+                    if ($sidebar_img_container.length != 0) {
+                        $sidebar_img_container.fadeIn('fast');
+                        $sidebar.attr('data-image', '#');
+                    }
 
+                    if ($full_page_background.length != 0) {
+                        $full_page_background.fadeIn('fast');
+                        $full_page.attr('data-image', '#');
+                    }
 
+                    background_image = true;
+                } else {
+                    if ($sidebar_img_container.length != 0) {
+                        $sidebar.removeAttr('data-image');
+                        $sidebar_img_container.fadeOut('fast');
+                    }
 
+                    if ($full_page_background.length != 0) {
+                        $full_page.removeAttr('data-image', '#');
+                        $full_page_background.fadeOut('fast');
+                    }
 
+                    background_image = false;
+                }
+            });
 
+            $('.switch-sidebar-mini input').change(function() {
+                $body = $('body');
+
+                $input = $(this);
+
+                if (md.misc.sidebar_mini_active == true) {
+                    $('body').removeClass('sidebar-mini');
+                    md.misc.sidebar_mini_active = false;
+
+                    $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+
+                } else {
+
+                    $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
+
+                    setTimeout(function() {
+                        $('body').addClass('sidebar-mini');
+
+                        md.misc.sidebar_mini_active = true;
+                    }, 300);
+                }
+
+                // we simulate the window Resize so the charts will get updated in realtime.
+                var simulateWindowResize = setInterval(function() {
+                    window.dispatchEvent(new Event('resize'));
+                }, 180);
+
+                // we stop the simulation of Window Resize after the animations are completed
+                setTimeout(function() {
+                    clearInterval(simulateWindowResize);
+                }, 1000);
+
+            });
+        });
+    });
+</script>
+<style>
+
+    .dataTable > thead > tr > th[class*=sort]:after{ display:none; !important;}
+    .dataTable > thead > tr > th[class*=sort]:before{ display:none; !important;}
+</style>
 </body>
+
 </html>

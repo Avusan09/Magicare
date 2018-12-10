@@ -41,6 +41,7 @@ Route::group(['middleware'=>['Admin']], function ()
     });
     Route::resource('/admin/vehicle', 'VehiclesController');
     Route::resource('/admin/tax', 'TaxController');
+    Route::resource('/admin/inventory', 'InventoryController');
 
 
     Route::patch('/admin/vehicle/{id}', 'VehiclesController@update');
@@ -49,6 +50,7 @@ Route::group(['middleware'=>['Admin']], function ()
     Route::post('/admin/stockist/create', 'StockistController@store');
     Route::post('/admin/vehicle/create', 'VehiclesController@store');
     Route::post('/admin/sales/create', 'SalesController@store');
+    Route::post('/admin/inventory/create', 'InventoryController@store');
     Route::post('/admin/tax/create', 'TaxController@store');
 });
 
