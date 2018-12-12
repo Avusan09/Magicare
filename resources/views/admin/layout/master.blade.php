@@ -14,6 +14,7 @@
     <!-- CSS Files -->
     {{--<link rel="stylesheet" href="{{asset('css/compiled.css')}}">--}}
     <link rel="stylesheet" href="{{asset('css/material-dashboard.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
     <link rel="stylesheet" href="{{asset('css/datatables.min.css')}}">
 
     <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>

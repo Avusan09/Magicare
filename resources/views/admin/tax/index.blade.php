@@ -5,28 +5,20 @@
 
 
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 p-5">
 
 
-                    <h3>Tax Permit and Insurance Information</h3>
+                     <span class="font-weight-bold h3">Tax Permit and Insurance Information</span>
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a href="tax/create" class="btn float-right btn-default btn-rounded mb-4" >Add Tax/Insurance Information</a>
+                    <a href="tax/create" class="btn float-right btn-success btn-rounded mb-4" >Add Tax/Insurance Information</a>
 
                     <div class="row" style="width: 100%">
 
                     </div>
-
-                    <div class="card card-cascade narrower">
-
-                        <!--Card image-->
-
-                        <!--/Card image-->
-
-                        <div class="px-4">
 
                             <div class="table-wrapper">
                                 <!--Table-->
@@ -137,10 +129,8 @@
                             <!--Bottom Table UI-->
 
                         </div>
-                    </div>
-                </div>
-            </div>
         </div>
+
 
 
     <script>

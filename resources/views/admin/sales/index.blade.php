@@ -10,7 +10,7 @@
 
 
                     <a href="#" class="float-left">Manage Sales</a>
-                    <a href="" class="btn float-right btn-default btn-rounded mb-4" data-toggle="modal" data-target="#">Generate Report</a>
+                    <a href="" class="btn float-right btn-success btn-rounded mb-4" data-toggle="modal" data-target="#">Generate Report</a>
 
                     @if (session('status'))
                         <div class="alert alert-success">

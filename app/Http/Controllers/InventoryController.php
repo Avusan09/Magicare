@@ -63,7 +63,8 @@ class InventoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $inventory = Inventory::find($id);
+        return view('admin.inventory.show', compact('inventory'));
     }
 
     /**
@@ -74,7 +75,8 @@ class InventoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $inventory = Inventory::find($id);
+        return view('admin.inventory.edit', compact('inventory'));
     }
 
     /**
@@ -86,7 +88,21 @@ class InventoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $inventory = Inventory::find($id);
+
+        $inventory->created_date = $request->get('created_date');
+        $inventory->product = $request->get('product');
+        $inventory->price = $request->get('price');
+        $inventory->supplier = $request->get('supplier');
+        $inventory->stored_location = $request->get('stored_location');
+        $inventory->status = $request->get('status');
+        $inventory->used_in = $request->get('used_in');
+        $inventory->remarks = $request->get('remarks');
+
+        $inventory->save();
+
+        return redirect()->action('InventoryController@index');
+
     }
 
     /**
@@ -97,6 +113,13 @@ class InventoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $inventory = Inventory::find($id);
+        try {
+            $inventory->delete();
+
+            return redirect('/admin/inventory')->with('success', 'Inventory Information deleted successfully');
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect('/admin/inventory')->with('warning', '\'Inventory Information can not be deleted. Foreign Constraint Violation.');
+        }
     }
 }

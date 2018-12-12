@@ -5,16 +5,16 @@
 
 
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 p-5">
 
 
-                    <h3>Vehicle Servicing Information</h3>
+                     <span class="font-weight-bold h3">Vehicle Servicing Information</span>
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a href="vehicle/create" class="btn float-right btn-default btn-rounded mb-4" >Add Vehicle Information</a>
+                    <a href="vehicle/create" class="btn float-right btn-success btn-rounded mb-4" >Add Vehicle Information</a>
 
 
 
@@ -26,13 +26,7 @@
 
                     <!--Top Table UI-->
 
-                    <div class="card card-cascade narrower">
 
-                        <!--Card image-->
-
-                        <!--/Card image-->
-
-                        <div class="px-4">
 
                             <div class="table-wrapper">
                                 <!--Table-->
@@ -150,9 +144,6 @@
 
                         </div>
                     </div>
-
-            </div>
-        </div>
 
 
     <script>
