@@ -17,14 +17,7 @@
                     <a href="vehicle/create" class="btn float-right btn-success btn-rounded mb-4" >Add Vehicle Information</a>
 
 
-
-                <!--Top Table UI-->
-                    <div class="row" style="width: 100%">
-
-                    </div>
-
-
-                    <!--Top Table UI-->
+                                    <!--Top Table UI-->
 
 
 
@@ -37,7 +30,8 @@
                                     <thead class="mdb-color darken-3 white-text">
                                     <tr>
 
-
+                                        <th class="th-sm"><a>Edit</a></th>
+                                        <th class="th-sm"><a>Delete</a></th>
                                         <th class="th-sm"><a>Servicing Date</a></th>
                                         <th class="th-sm"><a>Vehicle Prefix</a></th>
                                         <th class="th-sm"><a>Number</a></th>
@@ -62,10 +56,9 @@
                                         <th class="th-sm"><a>Spare Parts</a></th>
                                         <th class="th-sm"><a>Engine Repair</a></th>
                                         <th class="th-sm"><a>Total Cost</a></th>
-                                        <th class="th-sm"><a>Expiry Date</a></th>
+
                                         <th class="th-sm"><a>Remarks</a></th>
-                                        <th class="th-sm"><a></a></th>
-                                        <th class="th-sm"><a></a></th>
+
 
 
 
@@ -77,6 +70,16 @@
                                     <tbody>
                                     @foreach($vehicle as $sks)
                                         <tr>
+                                            <td><a href="/admin/vehicle/{{$sks->id}}/edit" class="btn btn-warning btn-sm float-right " > <i class="fa fa-edit"></i></a>
+
+                                            </td>
+                                            <td>
+                                                <form action="/admin/vehicle/{{$sks->id}}" method="POST">
+                                                    {{csrf_field()}}
+                                                    <input type="hidden" name="_method" value="X">
+                                                    <input type="submit" value="X" class="btn btn-block btn-danger btn-sm float-right" onclick="return  confirm('Are you sure you want to delete this entry?')">
+                                                </form>
+                                            </td>
 
                                             <td class="text-center">{{$sks->servicing_date}}</td>
                                             <td class="text-center text-uppercase">{{$sks->vehical_prefix}}</td>
@@ -102,22 +105,13 @@
                                             <td class="text-center">{{$sks->spare_parts}}</td>
                                             <td class="text-center">{{$sks->engine_repair}}</td>
                                             <td class="text-center">{{$sks->total_cost}}</td>
-                                            <td class="text-center">{{$sks->expiry_date}}</td>
+
 
                                             <td class="text-center">{{$sks->remarks}} </td>
 
 
 
-                                            <td><a href="/admin/vehicle/{{$sks->id}}/edit" class="btn btn-warning float-right " > <i class="fa fa-edit"></i></a>
 
-                                            </td>
-                                            <td>
-                                                <form action="/admin/vehicle/{{$sks->id}}" method="POST">
-                                                    {{csrf_field()}}
-                                                    <input type="hidden" name="_method" value="DELETE">
-                                                    <input type="submit" value="Delete" class="btn btn-block btn-danger float-right" onclick="return  confirm('Are you sure you want to delete this entry?')">
-                                                </form>
-                                            </td>
                                         </tr>
                                     @endforeach
 

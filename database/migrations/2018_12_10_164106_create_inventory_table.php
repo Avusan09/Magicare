@@ -21,6 +21,7 @@ class CreateInventoryTable extends Migration
             $table->string('stored_location');
             $table->string('status');
             $table->string('used_in');
+            $table->string('expiry_date')->nullable(true);
             $table->string('remarks');
             $table->timestamps();
         });

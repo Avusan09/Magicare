@@ -15,7 +15,7 @@ class InventoryController extends Controller
      */
     public function index()
     {
-        $inventory = DB::table('vehicles')->get();
+        $inventory = DB::table('inventory')->get();
         return view('admin.inventory.index', compact('inventory'));
 
 
@@ -49,6 +49,7 @@ class InventoryController extends Controller
         $inventory->status = request('status');
         $inventory->used_in = request('used_in');
         $inventory->remarks = request('remarks');
+        $inventory->expiry_date = request('expiry_date');
 
         $inventory->save();
 

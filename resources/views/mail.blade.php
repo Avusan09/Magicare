@@ -238,66 +238,77 @@
                                         Dear Magicare User,
 
                                     </p>
-                                    <p style="line-height: 24px;margin-bottom:15px;">
-                                        The following vehicles are about to expire soon:
-                                    </p>
 
-                                    <table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="5caad2" style="margin-bottom:20px;">
-
-
-
+                                        @if (count($vararr) > 0)
+                                        <p style="line-height: 24px;margin-bottom:15px;">
+                                            The following vehicles are about to expire soon:
+                                        </p>
+                                        <table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="5caad2" style="margin-bottom:20px;">
 
 
-                                        <tr>
-                                            <td height="10" style="font-size: 10px; line-height: 10px;">&nbsp;</td>
-                                        </tr>
-                                        <tr>
 
-                                            <th  style="color: #ffffff; text-transform:uppercase;font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">Vehicle Prefix</th>
-                                            <th  style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">Vehicle Number</th>
-                                            <th  style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">Servicing Date</th>
-                                            <th  style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">Expiry Date</th>
 
-                                        </tr>
-
-                                        <tr>
-                                            <td height="10" style="font-size: 10px; line-height: 10px;border-bottom: 1px solid white">&nbsp;</td>
-                                            <td height="10" style="font-size: 10px; line-height: 10px;border-bottom: 1px solid white">&nbsp;</td>
-                                            <td height="10" style="font-size: 10px; line-height: 10px;border-bottom: 1px solid white">&nbsp;</td>
-                                            <td height="10" style="font-size: 10px; line-height: 10px;border-bottom: 1px solid white">&nbsp;</td>
-                                        </tr>
-
-                                        @foreach($vehicle as $sks)
 
                                             <tr>
                                                 <td height="10" style="font-size: 10px; line-height: 10px;">&nbsp;</td>
                                             </tr>
                                             <tr>
-                                                <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->vehical_prefix}}</th>
-                                                <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->vehical_number}}</th>
-                                                <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->servicing_date}}</th>
-                                                <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->expiry_date}}</th>
+
+                                                <th  style="color: #ffffff; text-transform:uppercase;font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">Vehicle Prefix</th>
+                                                <th  style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">Vehicle Number</th>
+                                                <th  style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">Servicing Date</th>
+                                                <th  style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">Expiry Date</th>
 
                                             </tr>
 
                                             <tr>
-                                                <td height="10" style="font-size: 10px; line-height: 10px;">&nbsp;</td>
+                                                <td height="10" style="font-size: 10px; line-height: 10px;border-bottom: 1px solid white">&nbsp;</td>
+                                                <td height="10" style="font-size: 10px; line-height: 10px;border-bottom: 1px solid white">&nbsp;</td>
+                                                <td height="10" style="font-size: 10px; line-height: 10px;border-bottom: 1px solid white">&nbsp;</td>
+                                                <td height="10" style="font-size: 10px; line-height: 10px;border-bottom: 1px solid white">&nbsp;</td>
                                             </tr>
 
+                                            @foreach($vararr as $sks)
 
-                                        @endforeach{{--<tr>--}}
-                                        {{--<td align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">--}}
-                                        {{--<!-- main section button -->--}}
+                                                <tr>
+                                                    <td height="10" style="font-size: 10px; line-height: 10px;">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->vehical_prefix}}</th>
+                                                    <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->vehical_number}}</th>
+                                                    <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->servicing_date}}</th>
+                                                    <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->expiry_date}}</th>
 
-                                        {{--<div style="line-height: 22px;">--}}
-                                        {{--<a href="" style="color: #ffffff; text-decoration: none;">Go to the site</a>--}}
-                                        {{--</div>--}}
-                                        {{--</td>--}}
-                                        {{--</tr>--}}
-                                    </table>
-                                    <p style="line-height: 24px; margin-bottom:20px;">
+                                                </tr>
 
-                                    </p>
+                                                <tr>
+                                                    <td height="10" style="font-size: 10px; line-height: 10px;">&nbsp;</td>
+                                                </tr>
+
+
+                                            @endforeach{{--<tr>--}}
+                                            {{--<td align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">--}}
+                                            {{--<!-- main section button -->--}}
+
+                                            {{--<div style="line-height: 22px;">--}}
+                                            {{--<a href="" style="color: #ffffff; text-decoration: none;">Go to the site</a>--}}
+                                            {{--</div>--}}
+                                            {{--</td>--}}
+                                            {{--</tr>--}}
+                                        </table>
+                                        <p style="line-height: 24px; margin-bottom:20px;">
+
+                                        </p>
+                                        @else
+                                        <p style="line-height: 24px;margin-bottom:15px;">
+                                            No vehicles are about to expire.
+                                        </p>
+                                        @endif
+
+
+
+
+
 
 
 

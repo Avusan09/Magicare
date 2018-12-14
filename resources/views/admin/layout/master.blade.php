@@ -17,7 +17,10 @@
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
     <link rel="stylesheet" href="{{asset('css/datatables.min.css')}}">
 
+
     <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
+    <script type="text/javascript" src="https://unpkg.com/nepali-date-picker@2.0.0/dist/jquery.nepaliDatePicker.min.js" integrity="sha384-bBN6UZ/L0DswJczUYcUXb9lwIfAnJSGWjU3S0W5+IlyrjK0geKO+7chJ7RlOtrrF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/nepali-date-picker@2.0.0/dist/nepaliDatePicker.min.css" integrity="sha384-Fligaq3qH5qXDi+gnnhQctSqfMKJvH4U8DTA+XGemB/vv9AUHCwmlVR/B3Z4nE+q" crossorigin="anonymous">
 
 </head>
 
@@ -186,8 +189,17 @@
 {{--<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->--}}
 <script src="{{asset('js/material-dashboard.min.js')}}"></script>
 
+
 <script>
     $(document).ready(function() {
+        $(".date-picker").nepaliDatePicker({
+            dateFormat: "%y-%m-%d",
+            closeOnDateSelect: true
+
+        });
+
+
+
         $().ready(function() {
             $sidebar = $('.sidebar');
 

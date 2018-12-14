@@ -11,16 +11,16 @@ use Illuminate\Support\Facades\DB;
 class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
-    public $vehicle;
+    public $vararr;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($vehicle)
+    public function __construct($vararr)
     {
-        $this->vehicle = $vehicle;
+        $this->vararr = $vararr;
     }
 
     /**

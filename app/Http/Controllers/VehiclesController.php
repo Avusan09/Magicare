@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Vehicles;
+use DateTime;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -42,6 +43,32 @@ class VehiclesController extends Controller
 
         $vehicles = new Vehicles();
 
+        $vehiclesExpiryDate  = request('expiry_date');
+        $vehiclesType = request('type');
+
+        $Date = $vehiclesExpiryDate;
+        switch ($vehiclesType) {
+            case "Scooter":
+            case "Bike":
+            case "Car":
+            case "Jeep":
+            case "Pickup":
+            case "Tipper":
+
+                    $expiry_datee = date('Y-m-d', strtotime($Date. ' + 90 days'));
+                break;
+
+            case "Heavy":
+            case "Generator":
+
+                $expiry_datee = date('Y-m-d', strtotime($Date. ' + 60 days'));
+            break;
+
+
+            default:
+                echo "Added no expiry Date";
+        }
+
 
         $vehicles->servicing_date = request('servicing_date');
         $vehicles->vehical_prefix = request('vehical_prefix');
@@ -66,7 +93,7 @@ class VehiclesController extends Controller
         $vehicles->spare_parts = request('spare_parts');
         $vehicles->engine_repair = request('engine_repair');
         $vehicles->total_cost = request('total_cost');
-        $vehicles->expiry_date = request('expiry_date');
+        $vehicles->expiry_date = $expiry_datee;
         $vehicles->remarks = request('remarks');
 
 

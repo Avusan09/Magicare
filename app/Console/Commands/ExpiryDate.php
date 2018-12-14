@@ -6,6 +6,7 @@ use App\Mail\SendMail;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\MailController;
 
 class ExpiryDate extends Command
 {
@@ -40,8 +41,8 @@ class ExpiryDate extends Command
      */
     public function handle()
     {
-        $vehicle = DB::table('vehicles')->get();
-        Mail::to('carefreeav09@gmail.com')->send(new SendMail($vehicle));
+        $vararr = app('App\Http\Controllers\MailController')->support();
+        Mail::to('carefreeav09@gmail.com')->send(new SendMail($vararr));
 
     }
 }
