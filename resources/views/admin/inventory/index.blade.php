@@ -14,71 +14,85 @@
                     {{ session('status') }}
                 </div>
             @endif
-            <a href="inventory/create" class="btn float-right btn-success btn-rounded mb-4 " >Add Inventory Information</a>
+            <a href="inventory/create" type="button" class="btn float-right btn-success  mb-5 " >Add Inventory Information</a>
 
+            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#basicExampleModal">
+                Access Filters
+            </button>
 
+            <!-- Modal -->
+            <div class="modal fade bd-example-modal-lg" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header " style="    background: #00bcd4;
+    color: white;">
+                            <h3 class="modal-title" id="exampleModalLabel">Filters</h3>
+                            <br>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <span class="badge badge-info">Info</span> You can select multiple choices  by pressing CTRL + MouseClick on the selections.
+                            <br><br>
+                            <div class="row">
 
-                        <div id="accordion">
-                            <div class="card ">
-                                <div class="card-header" id="headingOne">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-info btn-sm" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Access Filters
-                                        </button>
-                                    </h5>
+                                <div class="col-sm-12 col-md-4 mb-5">
+                                    <div class="input-field col s12">
+                                        <span style="font-size:18px;font-weight:500;" multiple="true">Product:                </span>
+                                        <select style="height: 150px" class="form-control" id="productfltr" multiple>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4 mb-5">
+                                    <div class="input-field col s12">
+                                        <span style="font-size:18px;font-weight:500;">Price:</span>
+                                        <select  style="height: 150px" class="form-control" id="priceFltr" multiple></select>
+                                    </div>
                                 </div>
 
-                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                                    <div class="row">
-
-                                    <div class="col-sm-12 col-md-2">
-                                        <div class="input-field col s12">
-                                            <span style="font-size:18px;font-weight:500;" multiple="true">Product:                </span>
-                                            <select style="height: 70px" class="form-control" id="productfltr" multiple>
-
-                                            </select>
-                                        </div>
+                                <div class="col-sm-12 col-md-4 mb-5">
+                                    <div class="input-field col s12">
+                                        <span style="font-size:18px;font-weight:500;">Supplier:</span>
+                                        <select  style="height: 150px" class="form-control" id="supplierFltr" multiple></select>
                                     </div>
-                                    <div class="col-sm-12 col-md-2">
-                                        <div class="input-field col s12">
-                                            <span style="font-size:18px;font-weight:500;">Price:</span>
-                                            <select  style="height: 70px" class="form-control" id="priceFltr" multiple></select>
-                                        </div>
+                                </div>
+
+
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="input-field col s12">
+                                        <span style="font-size:18px;font-weight:500;">Stored Location:</span>
+                                        <select  style="height: 150px" class="form-control" id="storedFltr" multiple></select>
                                     </div>
+                                </div>
 
-                                        <div class="col-sm-12 col-md-2">
-                                            <div class="input-field col s12">
-                                                <span style="font-size:18px;font-weight:500;">Supplier:</span>
-                                                <select  style="height: 70px" class="form-control" id="supplierFltr" multiple></select>
-                                            </div>
-                                        </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="input-field col s12">
+                                        <span style="font-size:18px;font-weight:500;">Status:</span>
+                                        <select  style="height: 150px" class="form-control" id="statusfltr" multiple></select>
+                                    </div>
+                                </div>
 
-
-                                        <div class="col-sm-12 col-md-2">
-                                            <div class="input-field col s12">
-                                                <span style="font-size:18px;font-weight:500;">Stored Location:</span>
-                                                <select  style="height: 70px" class="form-control" id="storedFltr" multiple></select>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12 col-md-2">
-                                            <div class="input-field col s12">
-                                                <span style="font-size:18px;font-weight:500;">Status:</span>
-                                                <select  style="height: 70px" class="form-control" id="statusfltr" multiple></select>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12 col-md-2">
-                                            <div class="input-field col s12">
-                                                <span style="font-size:18px;font-weight:500;">Used In:</span>
-                                                <select  style="height: 70px" class="form-control" id="usedFltr" multiple></select>
-                                            </div>
-                                        </div>
+                                <div class="col-sm-12 col-md-4 ">
+                                    <div class="input-field col s12">
+                                        <span style="font-size:18px;font-weight:500;">Used In:</span>
+                                        <select  style="height: 150px" class="form-control" id="usedFltr" multiple></select>
+                                    </div>
                                 </div>
                             </div>
-                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            
+                            <button type="button" data-dismiss="modal" class="btn btn-primary">Go back</button>
 
+
+                        </div>
                     </div>
+                </div>
+            </div>
+
+
 
 
                 <div class="card-action">
@@ -114,11 +128,12 @@
                             </td>
 
                             <td>
-                                <form action="/admin/inventory/destroy/{{$inv->id}}" method="POST">
-                                    {{csrf_field()}}
+                                <form action="{{ route('inventory.destroy', $inv->id)}}" method="post">
+                                                                       {{csrf_field()}}
                                     {{ method_field('DELETE') }}
-                                    <input type="hidden" name="_method" value="X">
+                                    <input type="hidden" name="_method" value="DELETE" />
                                     <input type="submit" value="X" class="btn btn-block btn-danger btn-sm float-right" onclick="return  confirm('Are you sure you want to delete this entry?')">
+
                                 </form>
                             </td>
                          <td class="text-center">{{$inv->product}}</td>
@@ -163,7 +178,7 @@
                         console.log(column);
                         var select = $("#productfltr");
                         column.data().unique().sort().each( function ( d, j ) {
-                            select.append( '<option value="'+d+'">'+d+'</option>' )
+                            select.append( '<option class="material-options" value="'+d+'">'+d+'</option>' )
                         } );
                     } );
 
@@ -172,7 +187,7 @@
                         console.log(column);
                         var select = $("#priceFltr");
                         column.data().unique().sort().each( function ( d, j ) {
-                            select.append( '<option value="'+d+'">'+d+'</option>' )
+                            select.append( '<option class="material-options" value="'+d+'">'+d+'</option>' )
                         } );
                     } );
 
@@ -181,7 +196,7 @@
                         console.log(column);
                         var select = $("#supplierFltr");
                         column.data().unique().sort().each( function ( d, j ) {
-                            select.append( '<option value="'+d+'">'+d+'</option>' )
+                            select.append( '<option class="material-options" value="'+d+'">'+d+'</option>' )
                         } );
                     } );
 
@@ -190,7 +205,7 @@
                         console.log(column);
                         var select = $("#storedFltr");
                         column.data().unique().sort().each( function ( d, j ) {
-                            select.append( '<option value="'+d+'">'+d+'</option>' )
+                            select.append( '<option class="material-options" value="'+d+'">'+d+'</option>' )
                         } );
                     } );
                     this.api().columns([6]).every( function () {
@@ -198,7 +213,7 @@
                         console.log(column);
                         var select = $("#statusfltr");
                         column.data().unique().sort().each( function ( d, j ) {
-                            select.append( '<option value="'+d+'">'+d+'</option>' )
+                            select.append( '<option class="material-options" value="'+d+'">'+d+'</option>' )
                         } );
                     } );
                     this.api().columns([7]).every( function () {
@@ -206,7 +221,7 @@
                         console.log(column);
                         var select = $("#usedFltr");
                         column.data().unique().sort().each( function ( d, j ) {
-                            select.append( '<option value="'+d+'">'+d+'</option>' )
+                            select.append( '<option class="material-options" value="'+d+'">'+d+'</option>' )
                         } );
                     } );
 
@@ -284,6 +299,11 @@
 
 
 
+
+
+
+
+
             // $('#clearSearch').on('click', function(){
             //     var search = [];
             //     table.column(2).search(search, true, false).draw();
@@ -303,7 +323,26 @@
         {display: none}
 
 
+        .material-options
+        {
+            font-size: 16px;
+            color: #26a69a;
+            display: block;
+            line-height: 22px;
+            padding: 14px 16px;
+            cursor: pointer;
+        }
 
+
+        .modal-lg {
+            width: 900px;
+        }
+
+        option.material-options:hover {
+            background: #333333;
+            color: white;
+            cursor: pointer;
+        }
     </style>
     @stop
 

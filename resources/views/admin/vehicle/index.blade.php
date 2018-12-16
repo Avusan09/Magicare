@@ -74,9 +74,10 @@
 
                                             </td>
                                             <td>
-                                                <form action="/admin/vehicle/{{$sks->id}}" method="POST">
+                                                <form action="{{ route('vehicle.destroy', $sks->id)}}" method="post">
                                                     {{csrf_field()}}
-                                                    <input type="hidden" name="_method" value="X">
+                                                    {{ method_field('DELETE') }}
+                                                    <input type="hidden" name="_method" value="DELETE" />
                                                     <input type="submit" value="X" class="btn btn-block btn-danger btn-sm float-right" onclick="return  confirm('Are you sure you want to delete this entry?')">
                                                 </form>
                                             </td>

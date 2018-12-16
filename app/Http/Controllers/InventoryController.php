@@ -114,26 +114,22 @@ class InventoryController extends Controller
      */
     public function destroy($id)
     {
-        $inventory = Inventory::find($id);
-        try {
-            $inventory->delete();
+        $share = Inventory::find($id);
+        $share->delete();
 
-            return redirect('/admin/inventory')->with('success', 'Inventory Information deleted successfully');
-        } catch (\Illuminate\Database\QueryException $e) {
-            return redirect('/admin/inventory')->with('warning', '\'Inventory Information can not be deleted. Foreign Constraint Violation.');
-        }
+        return redirect()->action('InventoryController@index')->with('success', 'Inventory has been deleted Successfully');;
     }
 
-    public function product()
-    {
-
-        $product = DB::table('inventory')->pluck('product');
-//        print_r($inventory);
-
-        return response()->json([
-            'product' => $product
-        ]);
-    }
+//    public function product()
+//    {
+//
+//        $product = DB::table('inventory')->pluck('product');
+////        print_r($inventory);
+//
+//        return response()->json([
+//            'product' => $product
+//        ]);
+//    }
 
 
 }
