@@ -194,4 +194,16 @@ class VehiclesController extends Controller
             return redirect('/admin/vehicle')->with('warning', '\'Vehicle Information can not be deleted. Foreign Constraint Violation.');
         }
     }
+
+    public function vehiclesNumber()
+    {
+
+        $vehicle = DB::table('vehicles')->get();
+
+        print_r($vehicle);
+
+        return response()->json([
+            'number' => $vehicle
+        ]);
+    }
 }

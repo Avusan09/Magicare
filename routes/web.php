@@ -15,12 +15,17 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/test', function () {
+    return view('test');
+});
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/vehicals', 'HomeController@vehicles')->name('vehicles');
 
-Route::resource('/test/', 'TestController');
 
 
 
@@ -47,11 +52,17 @@ Route::group(['middleware'=>['Admin']], function ()
     Route::patch('/admin/vehicle/{id}', 'VehiclesController@update');
     Route::patch('/admin/tax/{id}', 'TaxController@update');
 
+
+
+
+
     Route::post('/admin/stockist/create', 'StockistController@store');
     Route::post('/admin/vehicle/create', 'VehiclesController@store');
     Route::post('/admin/sales/create', 'SalesController@store');
     Route::post('/admin/inventory/create', 'InventoryController@store');
     Route::post('/admin/tax/create', 'TaxController@store');
+    Route::get('/inventoryproducts', 'InventoryController@product');
+    Route::delete('/admin/inventory/destroy/{id}','InventoryController@destroy');
 });
 
 Route::get('/admin-user', 'AdminUserController@index');

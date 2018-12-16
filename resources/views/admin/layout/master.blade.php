@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Admin @yield('title')</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -12,13 +11,17 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
-    {{--<link rel="stylesheet" href="{{asset('css/compiled.css')}}">--}}
+
     <link rel="stylesheet" href="{{asset('css/material-dashboard.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
     <link rel="stylesheet" href="{{asset('css/datatables.min.css')}}">
+    {{--<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">--}}
 
 
     <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="https://unpkg.com/nepali-date-picker@2.0.0/dist/jquery.nepaliDatePicker.min.js" integrity="sha384-bBN6UZ/L0DswJczUYcUXb9lwIfAnJSGWjU3S0W5+IlyrjK0geKO+7chJ7RlOtrrF" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/nepali-date-picker@2.0.0/dist/nepaliDatePicker.min.css" integrity="sha384-Fligaq3qH5qXDi+gnnhQctSqfMKJvH4U8DTA+XGemB/vv9AUHCwmlVR/B3Z4nE+q" crossorigin="anonymous">
 
@@ -26,7 +29,7 @@
 
 <body>
 <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
+    <div class="sidebar" data-color="purple" data-background-color="black" >
         <!--
           Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -174,7 +177,9 @@
 
 <script src="{{asset('js/popper.min.js')}}"></script>
 <script src="{{asset('js/bootstrap-material-design.min.js')}}"></script>
+
 <script src="{{asset('js/datatables.min.js')}}"></script>
+{{--<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>--}}
 
 {{--<script src="https://unpkg.com/default-passive-events"></script>--}}
 <script src="{{asset('js/perfect-scrollbar.jquery.min.js')}}"></script>
@@ -189,9 +194,20 @@
 {{--<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->--}}
 <script src="{{asset('js/material-dashboard.min.js')}}"></script>
 
+<script type="text/javascript">
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
 
 <script>
+
+
     $(document).ready(function() {
+
         $(".date-picker").nepaliDatePicker({
             dateFormat: "%y-%m-%d",
             closeOnDateSelect: true

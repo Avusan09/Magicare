@@ -23,7 +23,7 @@
 
                             <div class="table-wrapper">
                                 <!--Table-->
-                                <table class="table table-hover table-responsive table-bordered" id="myTable">
+                                <table class="table-hover table-responsive " id="myTable">
                                     
 
                                     <!--Table head-->

@@ -41,7 +41,7 @@ class InventoryController extends Controller
     {
         $inventory = new Inventory();
 
-        $inventory->created_date = request('created_date');
+
         $inventory->product = request('product');
         $inventory->price = request('price');
         $inventory->supplier = request('supplier');
@@ -49,7 +49,7 @@ class InventoryController extends Controller
         $inventory->status = request('status');
         $inventory->used_in = request('used_in');
         $inventory->remarks = request('remarks');
-        $inventory->expiry_date = request('expiry_date');
+        $inventory->date = request('date');
 
         $inventory->save();
 
@@ -91,7 +91,7 @@ class InventoryController extends Controller
     {
         $inventory = Inventory::find($id);
 
-        $inventory->created_date = $request->get('created_date');
+        $inventory->date = $request->get('date');
         $inventory->product = $request->get('product');
         $inventory->price = $request->get('price');
         $inventory->supplier = $request->get('supplier');
@@ -123,4 +123,17 @@ class InventoryController extends Controller
             return redirect('/admin/inventory')->with('warning', '\'Inventory Information can not be deleted. Foreign Constraint Violation.');
         }
     }
+
+    public function product()
+    {
+
+        $product = DB::table('inventory')->pluck('product');
+//        print_r($inventory);
+
+        return response()->json([
+            'product' => $product
+        ]);
+    }
+
+
 }
