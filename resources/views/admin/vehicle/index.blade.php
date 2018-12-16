@@ -14,7 +14,46 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a href="vehicle/create" class="btn float-right btn-success btn-rounded mb-4" >Add Vehicle Information</a>
+                    <a type="button" href="vehicle/create" class="btn float-right btn-success  mb-4" >Add Vehicle Information</a>
+                <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#basicExampleModal">
+                    Access Filters
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade bd-example-modal-lg" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header " style="    background: #00bcd4;
+    color: white;">
+                                <h3 class="modal-title" id="exampleModalLabel">Filters</h3>
+                                <br>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <span class="badge badge-info">Info</span> You can select multiple choices  by pressing CTRL + MouseClick on the selections.
+                                <br><br>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6 mb-5">
+                                        <div class="input-field col-md-12">
+                                            <span style="font-size:18px;font-weight:500;" multiple="true">Number:                </span>
+                                            <select style="height: 150px" class="form-control" id="numberFltr" multiple>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6 mb-5">
+                                        <div class="input-field col-md-12">
+                                            <span style="font-size:18px;font-weight:500;">Vehicle Type:</span>
+                                            <select  style="height: 150px" class="form-control" id="typeFltr" multiple></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
                                     <!--Top Table UI-->
@@ -23,7 +62,7 @@
 
                             <div class="table-wrapper">
                                 <!--Table-->
-                                <table class="table-hover table-responsive " id="myTable">
+                                <table class="table-hover table-responsive " id="example">
                                     
 
                                     <!--Table head-->
@@ -142,15 +181,57 @@
 
 
     <script>
-        $(document).ready( function () {
-            $('#myTable').DataTable({
-                dom: 'Bfrtip',
+        $(document).ready(function (){
+            var table = $('#example').DataTable({
+                dom: 'lrtip',
                 buttons: [
                     'excel', 'pdf',
                 ],
-                "order": [[ 0, "desc" ]]
+
+                "order": [[ 0, "desc" ]],
+                initComplete: function () {
+                    this.api().columns([6]).every( function () {
+                        var column = this;
+                        console.log(column);
+                        var select = $("#typeFltr");
+                        column.data().unique().sort().each( function ( d, j ) {
+                            select.append( '<option class="material-options" value="'+d+'">'+d+'</option>' )
+                        } );
+                    } );
+                    this.api().columns([4]).every( function () {
+                        var column = this;
+                        console.log(column);
+                        var select = $("#numberFltr");
+                        column.data().unique().sort().each( function ( d, j ) {
+                            select.append( '<option class="material-options" value="'+d+'">'+d+'</option>' )
+                        } );
+                    } );
+
+                }
             });
-        } );
+
+            $('#typeFltr').on('change', function(){
+                var search = [];
+
+                $.each($('#typeFltr option:selected'), function(){
+                    search.push($(this).val());
+                });
+
+                search = search.join('|');
+                table.column(6).search(search, true, false).draw();
+            });
+
+            $('#numberFltr').on('change', function(){
+                var search = [];
+
+                $.each($('#numberFltr option:selected'), function(){
+                    search.push($(this).val());
+                });
+
+                search = search.join('|');
+                table.column(4).search(search, true, false).draw();
+            });
+        });
     </script>
 
 @stop

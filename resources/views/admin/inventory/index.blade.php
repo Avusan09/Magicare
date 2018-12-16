@@ -317,33 +317,6 @@
     </script>
 
 
-    <style>
-
-        #example_filter
-        {display: none}
-
-
-        .material-options
-        {
-            font-size: 16px;
-            color: #26a69a;
-            display: block;
-            line-height: 22px;
-            padding: 14px 16px;
-            cursor: pointer;
-        }
-
-
-        .modal-lg {
-            width: 900px;
-        }
-
-        option.material-options:hover {
-            background: #333333;
-            color: white;
-            cursor: pointer;
-        }
-    </style>
     @stop
 
 
