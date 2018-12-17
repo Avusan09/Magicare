@@ -103,8 +103,8 @@ div.dt-buttons.btn-group > button.btn.btn-secondary.buttons-pdf.buttons-html5
 
  }
 
-#example_filter
-{display: none}
+/*#example_filter*/
+/*{display: none}*/
 
 
 .material-options
@@ -126,4 +126,11 @@ option.material-options:hover {
     background: #333333;
     color: white;
     cursor: pointer;
+}
+
+[class*=" bmd-label"], [class^=bmd-label] {
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #1d1d1d !important;
+    font-weight: 500;
 }

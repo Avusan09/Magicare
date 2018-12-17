@@ -33,7 +33,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <span class="badge badge-info">Info</span> You can select multiple choices  by pressing CTRL + MouseClick on the selections.
+                            <span class="badge badge-info">Info</span> You can select and deselect multiple choices  by pressing CTRL + MouseClick on the selections.
                             <br><br>
                             <div class="row">
 
@@ -60,24 +60,31 @@
                                 </div>
 
 
-                                <div class="col-sm-12 col-md-4">
+                                <div class="col-sm-12 col-md-3">
                                     <div class="input-field col s12">
                                         <span style="font-size:18px;font-weight:500;">Stored Location:</span>
                                         <select  style="height: 150px" class="form-control" id="storedFltr" multiple></select>
                                     </div>
                                 </div>
 
-                                <div class="col-sm-12 col-md-4">
+                                <div class="col-sm-12 col-md-3">
                                     <div class="input-field col s12">
                                         <span style="font-size:18px;font-weight:500;">Status:</span>
                                         <select  style="height: 150px" class="form-control" id="statusfltr" multiple></select>
                                     </div>
                                 </div>
 
-                                <div class="col-sm-12 col-md-4 ">
+                                <div class="col-sm-12 col-md-3 ">
                                     <div class="input-field col s12">
                                         <span style="font-size:18px;font-weight:500;">Used In:</span>
                                         <select  style="height: 150px" class="form-control" id="usedFltr" multiple></select>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-3 ">
+                                    <div class="input-field col s12">
+                                        <span style="font-size:18px;font-weight:500;">Serial Number:</span>
+                                        <select  style="height: 150px" class="form-control" id="snoFltr" multiple></select>
                                     </div>
                                 </div>
                             </div>
@@ -105,16 +112,19 @@
                     <!--Table head-->
                     <thead class="mdb-color darken-3 white-text">
                     <tr>
-                       <th class="th-sm text-center"   style="width:50px !important" >Edit</th>
-                       <th class="th-sm text-center"   style="width:50px !important" >Delete</th>
+                        <th class="th-sm text-center"   style="width:50px !important" >Date Added</th>
+
                        <th class="th-sm text-center"   style="width:50px !important" >Product</th>
                        <th class="th-sm text-center"   style="width:50px !important" >Price</th>
                        <th class="th-sm text-center"   style="width:50px !important" >Supplier</th>
                        <th class="th-sm text-center"   style="width:50px !important" >Stored Location</th>
                        <th class="th-sm text-center"   style="width:50px !important" >Status</th>
                        <th class="th-sm text-center"   style="width:50px !important" >Used In</th>
-                       <th class="th-sm text-center"   style="width:50px !important" >Date Added</th>
+                       <th class="th-sm text-center"   style="width:50px !important" >S.NO</th>
+
                        <th class="th-sm text-center"   style="width:50px !important" >Remarks</th>
+                        <th class="th-sm text-center"   style="width:50px !important" >Edit</th>
+                        <th class="th-sm text-center"   style="width:50px !important" >Delete</th>
 
 
                     </tr>
@@ -124,26 +134,28 @@
                     <tbody>
                     @foreach($inventory as $inv)
                         <tr>
+                            <td class="text-center">{{$inv->date}}</td>
+                            <td class="text-center">{{$inv->product}}</td>
+                         <td class="text-center">{{$inv->price}}</td>
+                         <td class="text-center">{{$inv->supplier}}</td>
+                         <td class="text-center">{{$inv->stored_location}}</td>
+                         <td class="text-center">{{$inv->status}}</td>
+                         <td class="text-center">{{$inv->used_in}}</td>
+                         <td class="text-center">{{$inv->serial_number}}</td>
+
+                         <td class="text-center">{{$inv->remarks}}</td>
                             <td><a href="/admin/inventory/{{$inv->id}}/edit" class="btn  btn-block btn-warning float-right btn-sm " > <i class="fa fa-edit"></i></a>
                             </td>
 
                             <td>
                                 <form action="{{ route('inventory.destroy', $inv->id)}}" method="post">
-                                                                       {{csrf_field()}}
+                                    {{csrf_field()}}
                                     {{ method_field('DELETE') }}
                                     <input type="hidden" name="_method" value="DELETE" />
                                     <input type="submit" value="X" class="btn btn-block btn-danger btn-sm float-right" onclick="return  confirm('Are you sure you want to delete this entry?')">
 
                                 </form>
                             </td>
-                         <td class="text-center">{{$inv->product}}</td>
-                         <td class="text-center">{{$inv->price}}</td>
-                         <td class="text-center">{{$inv->supplier}}</td>
-                         <td class="text-center">{{$inv->stored_location}}</td>
-                         <td class="text-center">{{$inv->status}}</td>
-                         <td class="text-center">{{$inv->used_in}}</td>
-                         <td class="text-center">{{$inv->date}}</td>
-                         <td class="text-center">{{$inv->remarks}}</td>
 
                         </tr>
                     @endforeach
@@ -173,7 +185,7 @@
 
                 "order": [[ 0, "desc" ]],
                 initComplete: function () {
-                    this.api().columns([2]).every( function () {
+                    this.api().columns([1]).every( function () {
                         var column = this;
                         console.log(column);
                         var select = $("#productfltr");
@@ -182,7 +194,7 @@
                         } );
                     } );
 
-                    this.api().columns([3]).every( function () {
+                    this.api().columns([2]).every( function () {
                         var column = this;
                         console.log(column);
                         var select = $("#priceFltr");
@@ -191,7 +203,7 @@
                         } );
                     } );
 
-                    this.api().columns([4]).every( function () {
+                    this.api().columns([3]).every( function () {
                         var column = this;
                         console.log(column);
                         var select = $("#supplierFltr");
@@ -200,7 +212,7 @@
                         } );
                     } );
 
-                    this.api().columns([5]).every( function () {
+                    this.api().columns([4]).every( function () {
                         var column = this;
                         console.log(column);
                         var select = $("#storedFltr");
@@ -208,7 +220,7 @@
                             select.append( '<option class="material-options" value="'+d+'">'+d+'</option>' )
                         } );
                     } );
-                    this.api().columns([6]).every( function () {
+                    this.api().columns([5]).every( function () {
                         var column = this;
                         console.log(column);
                         var select = $("#statusfltr");
@@ -216,10 +228,19 @@
                             select.append( '<option class="material-options" value="'+d+'">'+d+'</option>' )
                         } );
                     } );
-                    this.api().columns([7]).every( function () {
+                    this.api().columns([6]).every( function () {
                         var column = this;
                         console.log(column);
                         var select = $("#usedFltr");
+                        column.data().unique().sort().each( function ( d, j ) {
+                            select.append( '<option class="material-options" value="'+d+'">'+d+'</option>' )
+                        } );
+                    } );
+
+                    this.api().columns([7]).every( function () {
+                        var column = this;
+                        console.log(column);
+                        var select = $("#snoFltr");
                         column.data().unique().sort().each( function ( d, j ) {
                             select.append( '<option class="material-options" value="'+d+'">'+d+'</option>' )
                         } );
@@ -239,7 +260,7 @@
                 });
 
                 search = search.join('|');
-                table.column(2).search(search, true, false).draw();
+                table.column(1).search(search, true, false).draw();
             });
 
             $('#priceFltr').on('change', function(){
@@ -250,7 +271,7 @@
                 });
 
                 search = search.join('|');
-                table.column(3).search(search, true, false).draw();
+                table.column(2).search(search, true, false).draw();
             });
 
             $('#supplierFltr').on('change', function(){
@@ -261,7 +282,7 @@
                 });
 
                 search = search.join('|');
-                table.column(4).search(search, true, false).draw();
+                table.column(3).search(search, true, false).draw();
             });
 
             $('#storedFltr').on('change', function(){
@@ -272,7 +293,7 @@
                 });
 
                 search = search.join('|');
-                table.column(5).search(search, true, false).draw();
+                table.column(4).search(search, true, false).draw();
             });
 
             $('#statusfltr').on('change', function(){
@@ -283,13 +304,24 @@
                 });
 
                 search = search.join('|');
-                table.column(6).search(search, true, false).draw();
+                table.column(5).search(search, true, false).draw();
             });
 
             $('#usedFltr').on('change', function(){
                 var search = [];
 
                 $.each($('#usedFltr option:selected'), function(){
+                    search.push($(this).val());
+                });
+
+                search = search.join('|');
+                table.column(6).search(search, true, false).draw();
+            });
+
+            $('#snoFltr').on('change', function(){
+                var search = [];
+
+                $.each($('#snoFltr option:selected'), function(){
                     search.push($(this).val());
                 });
 

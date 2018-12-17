@@ -32,7 +32,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <span class="badge badge-info">Info</span> You can select multiple choices  by pressing CTRL + MouseClick on the selections.
+                                <span class="badge badge-info">Info</span> You can select and deselect multiple choices  by pressing CTRL + MouseClick on the selections.
                                 <br><br>
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6 mb-5">
@@ -147,7 +147,7 @@
                                             <td class="text-center">{{$sks->total_cost}}</td>
 
 
-                                            <td class="text-center">{{$sks->remarks}} </td>
+                                            <td class="text-center">{{ str_limit($sks->remarks, 30)}} </td>
 
 
 
@@ -190,7 +190,7 @@
 
                 "order": [[ 0, "desc" ]],
                 initComplete: function () {
-                    this.api().columns([6]).every( function () {
+                    this.api().columns([5]).every( function () {
                         var column = this;
                         console.log(column);
                         var select = $("#typeFltr");
@@ -218,7 +218,7 @@
                 });
 
                 search = search.join('|');
-                table.column(6).search(search, true, false).draw();
+                table.column(5).search(search, true, false).draw();
             });
 
             $('#numberFltr').on('change', function(){

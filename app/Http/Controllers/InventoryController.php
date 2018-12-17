@@ -48,6 +48,7 @@ class InventoryController extends Controller
         $inventory->stored_location = request('stored_location');
         $inventory->status = request('status');
         $inventory->used_in = request('used_in');
+        $inventory->serial_number = request('serial_number');
         $inventory->remarks = request('remarks');
         $inventory->date = request('date');
 
@@ -98,6 +99,7 @@ class InventoryController extends Controller
         $inventory->stored_location = $request->get('stored_location');
         $inventory->status = $request->get('status');
         $inventory->used_in = $request->get('used_in');
+        $inventory->serial_number = $request->get('serial_number');
         $inventory->remarks = $request->get('remarks');
 
         $inventory->save();
