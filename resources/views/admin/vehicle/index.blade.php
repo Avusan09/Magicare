@@ -62,15 +62,14 @@
 
                             <div class="table-wrapper">
                                 <!--Table-->
-                                <table class="table-hover table-responsive " id="example">
+                                <table class="table-hover table-responsive stripe row-border order-column" id="example" style="height: 60vh">
                                     
 
                                     <!--Table head-->
                                     <thead class="mdb-color darken-3 white-text">
                                     <tr>
 
-                                        <th class="th-sm"><a>Edit</a></th>
-                                        <th class="th-sm"><a>Delete</a></th>
+
                                         <th class="th-sm"><a>Servicing Date</a></th>
                                         <th class="th-sm"><a>Vehicle Prefix</a></th>
                                         <th class="th-sm"><a>Number</a></th>
@@ -97,6 +96,8 @@
                                         <th class="th-sm"><a>Total Cost</a></th>
 
                                         <th class="th-sm"><a>Remarks</a></th>
+                                        <th class="th-sm"><a>Edit</a></th>
+                                        <th class="th-sm"><a>Delete</a></th>
 
 
 
@@ -109,20 +110,10 @@
                                     <tbody>
                                     @foreach($vehicle as $sks)
                                         <tr>
-                                            <td><a href="/admin/vehicle/{{$sks->id}}/edit" class="btn btn-warning btn-sm float-right " > <i class="fa fa-edit"></i></a>
 
-                                            </td>
-                                            <td>
-                                                <form action="{{ route('vehicle.destroy', $sks->id)}}" method="post">
-                                                    {{csrf_field()}}
-                                                    {{ method_field('DELETE') }}
-                                                    <input type="hidden" name="_method" value="DELETE" />
-                                                    <input type="submit" value="X" class="btn btn-block btn-danger btn-sm float-right" onclick="return  confirm('Are you sure you want to delete this entry?')">
-                                                </form>
-                                            </td>
 
                                             <td class="text-center">{{$sks->servicing_date}}</td>
-                                            <td class="text-center text-uppercase">{{$sks->vehical_prefix}}</td>
+                                            <td class="text-center ">{{$sks->vehical_prefix}}</td>
                                             <td class="text-center">{{$sks->vehical_number}}</td>
 
                                             <td class="text-center">{{$sks->type}}</td>
@@ -148,6 +139,17 @@
 
 
                                             <td class="text-center">{{ str_limit($sks->remarks, 30)}} </td>
+                                            <td><a href="/admin/vehicle/{{$sks->id}}/edit" class="btn btn-warning btn-sm float-right " > <i class="fa fa-edit"></i></a>
+
+                                            </td>
+                                            <td>
+                                                <form action="{{ route('vehicle.destroy', $sks->id)}}" method="post">
+                                                    {{csrf_field()}}
+                                                    {{ method_field('DELETE') }}
+                                                    <input type="hidden" name="_method" value="DELETE" />
+                                                    <input type="submit" value="X" class="btn btn-block btn-danger btn-sm float-right" onclick="return  confirm('Are you sure you want to delete this entry?')">
+                                                </form>
+                                            </td>
 
 
 
@@ -183,6 +185,7 @@
     <script>
         $(document).ready(function (){
             var table = $('#example').DataTable({
+
                 dom: 'lrtip',
                 buttons: [
                     'excel', 'pdf',
@@ -190,7 +193,7 @@
 
                 "order": [[ 0, "desc" ]],
                 initComplete: function () {
-                    this.api().columns([5]).every( function () {
+                    this.api().columns([3]).every( function () {
                         var column = this;
                         console.log(column);
                         var select = $("#typeFltr");
@@ -198,7 +201,7 @@
                             select.append( '<option class="material-options" value="'+d+'">'+d+'</option>' )
                         } );
                     } );
-                    this.api().columns([4]).every( function () {
+                    this.api().columns([2]).every( function () {
                         var column = this;
                         console.log(column);
                         var select = $("#numberFltr");
@@ -218,7 +221,7 @@
                 });
 
                 search = search.join('|');
-                table.column(5).search(search, true, false).draw();
+                table.column(3).search(search, true, false).draw();
             });
 
             $('#numberFltr').on('change', function(){
@@ -229,7 +232,7 @@
                 });
 
                 search = search.join('|');
-                table.column(4).search(search, true, false).draw();
+                table.column(2).search(search, true, false).draw();
             });
         });
     </script>

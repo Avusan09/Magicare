@@ -40,20 +40,22 @@
                             $stat0_5 = ($statvehicle == 'Tipper') ? 'selected' : '' ;
                             $stat0_6 = ($statvehicle == 'Heavy') ? 'selected' : '' ;
                             $stat0_7 = ($statvehicle == 'Generator') ? 'selected' : '' ;
+                            $stat0_8 = ($statvehicle == 'Car') ? 'selected' : '' ;
 
                             ?>
 
-                                <label class="bmd-label-floating" for="type">Vehicle Type</label>
-                                <select class="form-control" name="type" id="type">
-                                    <option value="" disabled selected>Choose your Vehicle Type</option>
-                                    <option <?php echo $stat0_1; ?> value="Bike">Bike</option>
-                                    <option <?php echo $stat0_2; ?> value="Scooter">Scooter</option>
-                                    <option <?php echo $stat0_3; ?> value="Jeep">Jeep</option>
-                                    <option <?php echo $stat0_4; ?> value="Pickup">Pickup</option>
-                                    <option <?php echo $stat0_5; ?> value="Tipper">Tipper</option>
-                                    <option <?php echo $stat0_6; ?> value="Heavy">Heavy</option>
-                                    <option <?php echo $stat0_7; ?> value="Generator">Generator</option>
-                                </select>
+                            <label class="bmd-label-floating" for="type">Vehicle Type</label>
+                            <select class="form-control" name="type" id="type">
+                                <option value="" disabled selected>Choose your Vehicle Type</option>
+                                <option <?php echo $stat0_1; ?> value="Bike">Bike</option>
+                                <option <?php echo $stat0_8; ?> value="Car">Car</option>
+                                <option <?php echo $stat0_2; ?> value="Scooter">Scooter</option>
+                                <option <?php echo $stat0_3; ?> value="Jeep">Jeep</option>
+                                <option <?php echo $stat0_4; ?> value="Pickup">Pickup</option>
+                                <option <?php echo $stat0_5; ?> value="Tipper">Tipper</option>
+                                <option <?php echo $stat0_6; ?> value="Heavy">Heavy</option>
+                                <option <?php echo $stat0_7; ?> value="Generator">Generator</option>
+                            </select>
                         </div>
                         <div class="col-md-3 mb-4">
                             <label for="worked_hours" class="bmd-label-floating">Worked Hours</label>
@@ -117,10 +119,26 @@
                             ?>
                             <label for="mobil_filter" class="bmd-label-floating">Mobil Filter</label>
                             <select id="mobil_filter" class="form-control" name="mobil_filter">
-                                <option value="" disabled selected>Mobil Filter</option>
+                                <option value="" disabled selected>-</option>
                                 <option <?php echo $statm_1; ?> value="1">1</option>
                                 <option <?php echo $statm_2; ?> value="2">2</option>
                                 <option <?php echo $statm_3; ?> value="0">0</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-3 mb-4">
+                            <?php
+                            $statdf=$stks->diesel_filter;
+                            $statdf_1 = ($statdf == 'Yes') ? 'selected' : '' ;
+                            $statdf_2 = ($statdf == 'No') ? 'selected' : '' ;
+
+                            ?>
+                            <label for="diesel_filter" class="bmd-label-floating">Diesel Filter</label>
+                            <select id="diesel_filter" class="form-control" name="diesel_filter">
+                                <option value="" disabled selected>-</option>
+                                <option <?php echo $statdf_1; ?> value="Yes">Yes</option>
+                                <option <?php echo $statdf_2; ?> value="No">No</option>
+
                             </select>
                         </div>
                         <div class="col-md-3 mb-4">

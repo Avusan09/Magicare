@@ -42,13 +42,13 @@ class InventoryController extends Controller
         $inventory = new Inventory();
 
 
-        $inventory->product = request('product');
+        $inventory->product = ucfirst(strtolower(request('product')));
         $inventory->price = request('price');
-        $inventory->supplier = request('supplier');
-        $inventory->stored_location = request('stored_location');
-        $inventory->status = request('status');
-        $inventory->used_in = request('used_in');
-        $inventory->serial_number = request('serial_number');
+        $inventory->supplier = ucfirst(strtolower(request('supplier')));
+        $inventory->stored_location = ucfirst(strtolower(request('stored_location')));
+        $inventory->status = ucfirst(strtolower(request('status')));
+        $inventory->used_in = ucfirst(strtolower(request('used_in')));
+        $inventory->serial_number = strtoupper(request('serial_number'));
         $inventory->remarks = request('remarks');
         $inventory->date = request('date');
 

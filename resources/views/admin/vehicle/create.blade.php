@@ -263,6 +263,30 @@
 
     <script>
 
+        function checkDate() {
+            if ($('#servicing_date').val() == '') {
+                alert("Servicing Date field is empty")
+                return false
+            }
+
+            else {
+                return true
+            }
+
+        }
+
+        $('form').submit(function() {
+            if(checkDate())
+            {
+                return true
+            }
+            else
+            {
+                return false
+            }
+
+        });
+
         function eventLog(event){
             var datePickerData = event.datePickerData;
 

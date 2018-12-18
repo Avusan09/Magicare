@@ -39,6 +39,15 @@ class TaxController extends Controller
     {
         $tax = new Tax();
 
+        $rt_expiry_date  = request('rt_expiry_date');
+        $ret_expiry_date  = request('ret_expiry_date');
+        $rp_expiry_date  = request('rp_expiry_date');
+
+        $expiry_rt = date('Y-m-d', strtotime($rt_expiry_date. ' + 365 days'));
+        $expiry_ret = date('Y-m-d', strtotime($ret_expiry_date. ' + 365 days'));
+        $expiry_rp = date('Y-m-d', strtotime($rp_expiry_date. ' + 365 days'));
+
+
 
         $tax->date = request('date');
         $tax->vehicle_prefix = request('vehicle_prefix');
@@ -63,6 +72,9 @@ class TaxController extends Controller
         $tax->insurance_company = request('insurance_company');
         $tax->policy = request('policy');
         $tax->insured_amount = request('insured_amount');
+        $tax->rt_expiry_date = $expiry_rt;
+        $tax->ret_expiry_date =$expiry_ret;
+        $tax->rp_expiry_date = $expiry_rp;
         $tax->remarks = request('remarks');
 
 
@@ -147,6 +159,10 @@ class TaxController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $share = Tax::find($id);
+        $share->delete();
+
+        return redirect()->action('TaxController@index')->with('success', 'Tax has been deleted Successfully');
+
     }
 }

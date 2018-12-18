@@ -70,29 +70,29 @@ class VehiclesController extends Controller
         }
 
 
-        $vehicles->servicing_date = request('servicing_date');
-        $vehicles->vehical_prefix = request('vehical_prefix');
-        $vehicles->vehical_number = request('vehical_number');
-        $vehicles->type = request('type');
-        $vehicles->worked_hours = request('worked_hours');
-        $vehicles->mobil = request('mobil');
-        $vehicles->transmission_oil = request('transmission_oil');
-        $vehicles->hydrolic = request('hydrolic');
-        $vehicles->mobil_filter = request('mobil_filter');
-        $vehicles->diesel_filter = request('diesel_filter');
-        $vehicles->hydrolic_filter = request('hydrolic_filter');
-        $vehicles->coolent_water = request('coolent_water');
-        $vehicles->coolent_filter = request('coolent_filter');
-        $vehicles->air_filter = request('air_filter');
-        $vehicles->pilot_filter = request('pilot_filter');
-        $vehicles->transmission_filter = request('transmission_filter');
-        $vehicles->water_safety = request('water_safety');
-        $vehicles->breather = request('breather');
-        $vehicles->tyres = request('tyres');
-        $vehicles->tubes = request('tubes');
-        $vehicles->spare_parts = request('spare_parts');
-        $vehicles->engine_repair = request('engine_repair');
-        $vehicles->total_cost = request('total_cost');
+        $vehicles->servicing_date = ucfirst(strtolower(request('servicing_date')));
+        $vehicles->vehical_prefix = strtoupper(request('vehical_prefix'));
+        $vehicles->vehical_number = ucfirst(strtolower(request('vehical_number')));
+        $vehicles->type = ucfirst(strtolower(request('type')));
+        $vehicles->worked_hours = ucfirst(strtolower(request('worked_hours')));
+        $vehicles->mobil = ucfirst(strtolower(request('mobil')));
+        $vehicles->transmission_oil = ucfirst(strtolower(request('transmission_oil')));
+        $vehicles->hydrolic = ucfirst(strtolower(request('hydrolic')));
+        $vehicles->mobil_filter = ucfirst(strtolower(request('mobil_filter')));
+        $vehicles->diesel_filter = ucfirst(strtolower(request('diesel_filter')));
+        $vehicles->hydrolic_filter = ucfirst(strtolower(request('hydrolic_filter')));
+        $vehicles->coolent_water = ucfirst(strtolower(request('coolent_water')));
+        $vehicles->coolent_filter = ucfirst(strtolower(request('coolent_filter')));
+        $vehicles->air_filter = ucfirst(strtolower(request('air_filter')));
+        $vehicles->pilot_filter = ucfirst(strtolower(request('pilot_filter')));
+        $vehicles->transmission_filter = ucfirst(strtolower(request('transmission_filter')));
+        $vehicles->water_safety = ucfirst(strtolower(request('water_safety')));
+        $vehicles->breather = ucfirst(strtolower(request('breather')));
+        $vehicles->tyres = ucfirst(strtolower(request('tyres')));
+        $vehicles->tubes = ucfirst(strtolower(request('tubes')));
+        $vehicles->spare_parts = ucfirst(strtolower(request('spare_parts')));
+        $vehicles->engine_repair = ucfirst(strtolower(request('engine_repair')));
+        $vehicles->total_cost = ucfirst(strtolower(request('total_cost')));
         $vehicles->expiry_date = $expiry_datee;
         $vehicles->remarks = request('remarks');
 
