@@ -11,6 +11,6 @@ class TaxSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\Tax::class, 50)->create();
     }
 }

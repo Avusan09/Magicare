@@ -29,7 +29,7 @@ class CreateVehicalinfoTable extends Migration
             $table->integer('coolent_water');
             $table->string('coolent_filter');
             $table->string('mobil_filter');
-            $table->string('diesel_filter')->nullable(true);
+            $table->string('diesel_filter');
             $table->string('hydrolic_filter');
             $table->string('air_filter');
             $table->string('pilot_filter');
