@@ -143,6 +143,7 @@ class TaxController extends Controller
         $tax->policy = $request->get('policy');
         $tax->insured_amount = $request->get('insured_amount');
         $tax->remarks = $request->get('remarks');
+        $tax->insurance_company = $request->get('insurance_company');
 
 
 

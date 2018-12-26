@@ -25,6 +25,13 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
          $schedule->command('send:mail')->everyMinute();
+
+
+    }
+
+    protected function scheduleTax(Schedule $taxSchedule)
+    {
+        $taxSchedule->command('tax:mail')->everyMinute();
     }
 
     /**

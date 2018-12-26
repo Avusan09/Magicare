@@ -9,16 +9,16 @@
 </head>
 <body onload="myFunction()" style="margin:0;background: #f3efe1">
 
-<div id="loader" style="height: 100vh">
+<div id="loader" style="height: 100vh; background: linear-gradient(75deg, #bad1ff, #4d84ff)">
     <div class="flex-center">
 
 
-        <div class="container text-center white-text ">
-            <img src="{{asset('img/magic.gif')}}"  alt="">
-            <h1 class="black-text wow fadeInUp font-weight-bold" style="letter-spacing: 2.0rem">M A G I C A R E</h1>
+        <div class="container text-center white-text">
+            <img src="{{asset('img/logo.png')}}"  alt="" style="height: 400px;width: 400px">
+            <h1 class="black-text wow fadeInUp font-weight-bold white-text"> MahaChandeswori Information System</h1>
         </div>
         </div>
-        \
+
     </div>
 
 
