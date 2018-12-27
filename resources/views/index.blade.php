@@ -15,7 +15,7 @@
 
         <div class="container text-center white-text">
             <img src="{{asset('img/logo.png')}}"  alt="" style="height: 400px;width: 400px">
-            <h1 class="black-text wow fadeInUp font-weight-bold white-text"> MahaChandeswori Information System</h1>
+            <h1 class="black-text wow fadeInUp font-weight-bold white-text"> Ma Chandeswori Information System</h1>
         </div>
         </div>
 

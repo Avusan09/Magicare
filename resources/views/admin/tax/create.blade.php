@@ -23,7 +23,7 @@
 
                         <div class="col-md-3 mb-4">
                             <label for="vehicle_prefix" class="bmd-label-floating">Vehicle Prefix</label>
-                            <input type="text" required name="vehicle_prefix" id="vehicle_prefix" class="form-control">
+                            <input type="text" required name="vehicle_prefix" id="vehicle_prefix" class="form-control text-uppercase">
                         </div>
                         <div class="col-md-3 mb-4">
                             <label for="vehicle_number" class="bmd-label-floating"> Vehicle Number</label>
@@ -46,7 +46,7 @@
                         </div>
                         <div class="col-md-3 mb-4">
                             <label for="chasis" class="bmd-label-floating">Chasis Number</label>
-                            <input type="text" required  name="chasis" id="chasis" class="form-control">
+                            <input type="text" required  name="chasis" id="chasis" class="form-control text-uppercase">
                         </div>
                         <div class="col-md-3 mb-4">
                             <label for="engine" class="bmd-label-floating">Engine No</label>
@@ -60,7 +60,7 @@
                         </div>
                         <div class="col-md-3 mb-4">
                             <label for="rt_bill" class="bmd-label-floating">Road Tax Bill No.</label>
-                            <input type="text" required  name="rt_bill" id="rt_bill" class="form-control">
+                            <input type="text" required  name="rt_bill" id="rt_bill" class="form-control text-uppercase">
                         </div>
                         <div class="col-md-3 mb-4">
                             <label for="rt_fiscal" class="bmd-label-floating">Road Tax Fiscal year</label>
@@ -78,7 +78,7 @@
                         </div>
                         <div class="col-md-3 mb-4">
                             <label for="ret_bill" class="bmd-label-floating">Renewal Tax Bill No.</label>
-                            <input type="text" required  name="ret_bill" id="ret_bill" class="form-control">
+                            <input type="text" required  name="ret_bill" id="ret_bill" class="form-control text-uppercase">
                         </div>
                         <div class="col-md-3 mb-4">
                             <label for="ret_fiscal" class="bmd-label-floating">Renewal Tax Fiscal year</label>
@@ -96,7 +96,7 @@
                         </div>
                         <div class="col-md-3 mb-4">
                             <label for="rp_bill" class="bmd-label-floating">Road Permit Bill No.</label>
-                            <input type="text" required  name="rp_bill" id="rp_bill" class="form-control">
+                            <input type="text" required  name="rp_bill" id="rp_bill" class="form-control text-uppercase">
                         </div>
                         <div class="col-md-3 mb-4">
                             <label for="rp_fiscal" class="bmd-label-floating">Road Permit Fiscal year</label>
@@ -120,7 +120,7 @@
                         </div>
                         <div class="col-md-3 mb-4">
                             <label for="policy" class="bmd-label-floating">Policy No.</label>
-                            <input type="text" required  name="policy" id="policy" class="form-control">
+                            <input type="text" required  name="policy" id="policy" class="form-control text-uppercase">
                         </div>
                         <div class="col-md-3 mb-4">
                             <label for="insurance_company" class="bmd-label-floating">Insurance Company</label>

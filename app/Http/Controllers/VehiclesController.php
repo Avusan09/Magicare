@@ -70,7 +70,7 @@ class VehiclesController extends Controller
         }
 
 
-        $vehicles->servicing_date = ucfirst(strtolower(request('servicing_date')));
+        $vehicles->servicing_date = request('servicing_date');
         $vehicles->vehical_prefix = strtoupper(request('vehical_prefix'));
         $vehicles->vehical_number = ucfirst(strtolower(request('vehical_number')));
         $vehicles->type = ucfirst(strtolower(request('type')));

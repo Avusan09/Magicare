@@ -50,27 +50,27 @@ class TaxController extends Controller
 
 
         $tax->date = request('date');
-        $tax->vehicle_prefix = request('vehicle_prefix');
+        $tax->vehicle_prefix = strtoupper(request('vehicle_prefix'));
         $tax->vehicle_number = request('vehicle_number');
         $tax->vehicle_type = request('vehicle_type');
-        $tax->chasis = request('chasis');
+        $tax->chasis = strtoupper(request('chasis'));
         $tax->engine = request('engine');
         $tax->rt_date = request('rt_date');
-        $tax->rt_bill = request('rt_bill');
+        $tax->rt_bill = strtoupper(request('rt_bill'));
         $tax->rt_fiscal = request('rt_fiscal');
         $tax->rt_amount = request('rt_amount');
         $tax->ret_date = request('ret_date');
-        $tax->ret_bill = request('ret_bill');
+        $tax->ret_bill = strtoupper(request('ret_bill'));
         $tax->ret_fiscal = request('ret_fiscal');
         $tax->ret_amount = request('ret_amount');
         $tax->rp_date = request('rp_date');
-        $tax->rp_bill = request('rp_bill');
+        $tax->rp_bill = strtoupper(request('rp_bill'));
         $tax->rp_fiscal = request('rp_fiscal');
         $tax->rp_amount = request('rp_amount');
         $tax->insurance_start = request('insurance_start');
         $tax->insurance_end = request('insurance_end');
         $tax->insurance_company = request('insurance_company');
-        $tax->policy = request('policy');
+        $tax->policy = strtoupper(request('policy'));
         $tax->insured_amount = request('insured_amount');
         $tax->rt_expiry_date = $expiry_rt;
         $tax->ret_expiry_date =$expiry_ret;
@@ -121,29 +121,41 @@ class TaxController extends Controller
         $tax= Tax::find($id);
 
         $tax->date =$request->get('date');
-        $tax->vehicle_prefix = $request->get('vehicle_prefix');
+        $tax->vehicle_prefix = strtoupper($request->get('vehicle_prefix'));
         $tax->vehicle_number = $request->get('vehicle_number');
         $tax->vehicle_type = $request->get('vehicle_type');
-        $tax->chasis = $request->get('chasis');
+        $tax->chasis = strtoupper($request->get('chasis'));
         $tax->engine = $request->get('engine');
         $tax->rt_date = $request->get('rt_date');
-        $tax->rt_bill = $request->get('rt_bill');
+        $tax->rt_bill = strtoupper($request->get('rt_bill'));
         $tax->rt_fiscal = $request->get('rt_fiscal');
         $tax->rt_amount = $request->get('rt_amount');
         $tax->ret_date = $request->get('ret_date');
-        $tax->ret_bill = $request->get('ret_bill');
+        $tax->ret_bill = strtoupper($request->get('ret_bill'));
         $tax->ret_fiscal = $request->get('ret_fiscal');
         $tax->ret_amount = $request->get('ret_amount');
         $tax->rp_date = $request->get('rp_date');
-        $tax->rp_bill = $request->get('rp_bill');
+        $tax->rp_bill = strtoupper($request->get('rp_bill'));
         $tax->rp_fiscal = $request->get('rp_fiscal');
         $tax->rp_amount = $request->get('rp_amount');
         $tax->insurance_start = $request->get('insurance_start');
         $tax->insurance_end = $request->get('insurance_end');
-        $tax->policy = $request->get('policy');
+        $tax->policy = strtoupper($request->get('policy'));
         $tax->insured_amount = $request->get('insured_amount');
         $tax->remarks = $request->get('remarks');
         $tax->insurance_company = $request->get('insurance_company');
+
+        $rt_expiry_date  =$request->get('rt_expiry_date');
+        $ret_expiry_date  = $request->get('ret_expiry_date');
+        $rp_expiry_date  = $request->get('rp_expiry_date');
+
+        $expiry_rt = date('Y-m-d', strtotime($rt_expiry_date. ' + 365 days'));
+        $expiry_ret = date('Y-m-d', strtotime($ret_expiry_date. ' + 365 days'));
+        $expiry_rp = date('Y-m-d', strtotime($rp_expiry_date. ' + 365 days'));
+
+        $tax->rt_expiry_date = $expiry_rt;
+        $tax->ret_expiry_date = $expiry_ret;
+        $tax->rp_expiry_date = $expiry_rp;
 
 
 

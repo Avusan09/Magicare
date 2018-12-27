@@ -84,33 +84,33 @@
                     <span class="navbar-toggler-icon icon-bar"></span>
                     <span class="navbar-toggler-icon icon-bar"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end">
-                   <ul class="navbar-nav">
+                <div class="collapse navbar-collapse justify-content-end pr-5">
+                    <ul class="nav navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item"><a href="{{ route('login') }}">Login</a></li>
+                            <li class="nav-item"><a href="{{ route('register') }}">Register</a></li>
+                        @else
+                            <li class="dropdown nav-item">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="javscript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="material-icons">notifications</i>
-                                <span class="notification">5</span>
-                                <p class="d-lg-none d-md-block">
-                                    Some Actions
-                                </p>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="javascript:void(0)">Mike John responded to your email</a>
-                                <a class="dropdown-item" href="javascript:void(0)">You have 5 new tasks</a>
-                                <a class="dropdown-item" href="javascript:void(0)">You're now friend with Andrew</a>
-                                <a class="dropdown-item" href="javascript:void(0)">Another Notification</a>
-                                <a class="dropdown-item" href="javascript:void(0)">Another One</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="javascript:void(0)">
-                                <i class="material-icons">person</i>
-                                <p class="d-lg-none d-md-block">
-                                    Account
-                                </p>
-                            </a>
-                        </li>
+                                <ul class="navbar-nav nav-flex-icons dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endguest
                     </ul>
                 </div>
             </div>

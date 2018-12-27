@@ -44,7 +44,7 @@ class InventoryController extends Controller
 
         $inventory->product = ucfirst(strtolower(request('product')));
         $inventory->price = request('price');
-        $inventory->supplier = ucfirst(strtolower(request('supplier')));
+        $inventory->supplier = request('supplier');
         $inventory->stored_location = ucfirst(strtolower(request('stored_location')));
         $inventory->status = ucfirst(strtolower(request('status')));
         $inventory->used_in = ucfirst(strtolower(request('used_in')));
