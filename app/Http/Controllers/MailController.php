@@ -101,6 +101,33 @@ class MailController extends Controller
 
     }
 
+    public function rtTaxExpiry()
+    {
+        $tax = DB::table('taxes')->get();
+        $varrt = array();
+
+        $vararrcount = 0;
+        $today = date("Y-m-d");
+        $count = count($tax);
+        for ($i = 0;$i<$count;$i++)
+        {
+            $exprt = $tax[$i]->rt_expiry_date;
+                        $datetimert1 = date_create($exprt);
+            $dateToday = date_create($today);
+
+
+            $intervalrt = date_diff($datetimert1, $dateToday);
+
+
+            if ($intervalrt->days < 3)
+            {
+                array_push($varrt,$tax[$i]);
+            }
+            }
+        return $varrt;
+
+    }
+
 
     public function send()
     {

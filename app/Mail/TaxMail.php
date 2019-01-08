@@ -11,16 +11,16 @@ use Illuminate\Support\Facades\DB;
 class TaxMail extends Mailable
 {
     use Queueable, SerializesModels;
-    public $taxarr;
+    public $varrt;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($taxarr)
+    public function __construct($varrt)
     {
-        $this->taxarr = $taxarr;
+        $this->varrt = $varrt;
     }
 
     /**
@@ -31,7 +31,7 @@ class TaxMail extends Mailable
     public function build()
     {
 
-        return $this->view('mail');
+        return $this->view('tax');
     }
 }
 //->to('carefreeav09@gmail.com')->from('carefreeav09@gmail.com','CarefreeAV')->subject('Vehicle Expiry Notification');

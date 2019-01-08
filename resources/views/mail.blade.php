@@ -10,7 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel="stylesheet">
     <!--<![endif]-->
 
-    <title>Magicare</title>
+    <title>MCIS</title>
 
     <style type="text/css">
         body {
@@ -144,7 +144,7 @@
     <tr>
         <td>
             <div style="overflow:hidden;display:none;font-size:1px;color:#ffffff;line-height:1px;font-family:Arial;maxheight:0px;max-width:0px;opacity:0;">
-               Magicare Vehicle Alert
+               MCIS Vehicle Alert
             </div>
         </td>
     </tr>
@@ -168,7 +168,7 @@
 
                             <tr>
                                 <td align="center" height="70" style="height:70px;">
-                                    <a href="" style="display: block; border-style: none !important; border: 0 !important;"><img width="100" border="0" style="display: block; width: 100px;" src="http://www.magicare.in/magic_care/images/magiccarelogo.jpg" alt="" /></a>
+                                    <a href="" style="display: block; border-style: none !important; border: 0 !important;"><img width="100" border="0" style="display: block; width: 100px;" src="{{asset('img/logo.png')}}" alt="" /></a>
                                 </td>
                             </tr>
 
@@ -202,7 +202,7 @@
 
                         <div style="line-height: 35px">
 
-                            Welcome to <span style="color: #5caad2;">Magicare</span>
+                            Welcome to <span style="color: #5caad2;">MCIS</span>
 
                         </div>
                     </td>
@@ -235,7 +235,7 @@
 
                                     <p style="line-height: 24px; margin-bottom:15px;">
 
-                                        Dear Magicare User,
+                                        Dear MCIS User,
 
                                     </p>
 
@@ -314,7 +314,7 @@
 
                                     <p style="line-height: 24px">
                                         Regards,<br>
-                                        Magicare Company
+                                        MCIS Company
                                     </p>
 
                                 </td>
@@ -366,7 +366,7 @@
                                 <td align="left" style="color: #aaaaaa; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 24px;">
                                     <div style="line-height: 24px;">
 
-                                        <span style="color: #333333;">Magicare</span>
+                                        <span style="color: #333333;">MCIS</span>
 
                                     </div>
                                 </td>
