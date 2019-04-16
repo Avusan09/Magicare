@@ -5,18 +5,19 @@
 
 
     <div class="row">
-        <div class="col-lg-12 p-5">
-
-
-            <span class="h3 font-weight-bold">Inventory Management</span>
+        <div class="col-lg-12">
+            <span class="h5-responsive font-weight-bold">Inventory Management</span>
             @if (session('status'))
-                <div class="alert alert-success">
+                <div class="alert alert-success alert-dismissible fade show">
                     {{ session('status') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
             @endif
-            <a href="inventory/create" type="button" class="btn float-right btn-success  mb-5 " >Add Inventory Information</a>
+            <a href="inventory/create" type="button" class="btn float-right btn-success btn-sm mb-5 " >Add Inventory Information</a>
 
-            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#basicExampleModal">
+            <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#basicExampleModal">
                 Access Filters
             </button>
 

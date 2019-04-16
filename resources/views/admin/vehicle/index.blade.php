@@ -5,17 +5,18 @@
 
 
         <div class="row">
-            <div class="col-lg-12 p-5">
-
-
-                     <span class="font-weight-bold h3">Vehicle Servicing Information</span>
+            <div class="col-lg-12">
+                <span class="font-weight-bold h5-responsive">Vehicle Servicing Information</span>
                     @if (session('status'))
-                        <div class="alert alert-success">
+                        <div class="alert alert-success alert-dismissible">
                             {{ session('status') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
                     @endif
-                    <a type="button" href="vehicle/create" class="btn float-right btn-success  mb-4" >Add Vehicle Information</a>
-                <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#basicExampleModal">
+                    <a type="button" href="vehicle/create" class="btn float-right btn-success btn-sm mb-4" >Add Vehicle Information</a>
+                <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#basicExampleModal">
                     Access Filters
                 </button>
 

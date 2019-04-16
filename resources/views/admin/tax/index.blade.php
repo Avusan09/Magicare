@@ -5,17 +5,18 @@
 
 
         <div class="row">
-            <div class="col-lg-12 p-5 pt-3">
-
-
+            <div class="col-lg-12">
                 <span class="font-weight-bold h3">Tax Permit and Insurance Information</span>
                     @if (session('status'))
-                        <div class="alert alert-success">
+                        <div class="alert alert-success alert-dismissible fade show">
                             {{ session('status') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
                     @endif
-                    <a href="tax/create" class="btn float-right btn-success btn-rounded mb-4" >Add Tax/Insurance Information</a>
-                <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#basicExampleModal">
+                    <a href="tax/create" class="btn float-right btn-sm btn-success btn-rounded mb-4" >Add Tax/Insurance Information</a>
+                <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#basicExampleModal">
                     Access Filters
                 </button>
 

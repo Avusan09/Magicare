@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
-
     <link rel="stylesheet" href="{{asset('css/material-dashboard.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
     <link rel="stylesheet" href="{{asset('css/datatables.min.css')}}">
@@ -121,39 +120,6 @@
                 @yield('content')
             </div>
         </div>
-        {{--<footer class="footer">--}}
-            {{--<div class="container-fluid">--}}
-                {{--<nav class="float-left">--}}
-                    {{--<ul>--}}
-                        {{--<li>--}}
-                            {{--<a href="https://www.creative-tim.com">--}}
-                                {{--Creative Tim--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li>--}}
-                            {{--<a href="https://creative-tim.com/presentation">--}}
-                                {{--About Us--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li>--}}
-                            {{--<a href="http://blog.creative-tim.com">--}}
-                                {{--Blog--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li>--}}
-                            {{--<a href="https://www.creative-tim.com/license">--}}
-                                {{--Licenses--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                    {{--</ul>--}}
-                {{--</nav>--}}
-                {{--<div class="copyright float-right" id="date">--}}
-                    {{--, made with <i class="material-icons">favorite</i> by--}}
-                    {{--<a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</footer>--}}
-
     </div>
 </div>
 
@@ -161,25 +127,12 @@
 
 <script src="{{asset('js/popper.min.js')}}"></script>
 <script src="{{asset('js/bootstrap-material-design.min.js')}}"></script>
-
 <script src="{{asset('js/datatables.min.js')}}"></script>
-{{--<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>--}}
-
-{{--<script src="https://unpkg.com/default-passive-events"></script>--}}
 <script src="{{asset('js/perfect-scrollbar.jquery.min.js')}}"></script>
-{{--<!-- Place this tag in your head or just before your close body tag. -->--}}
-{{--<script async defer src="https://buttons.github.io/buttons.js"></script>--}}
-{{--<!--  Google Maps Plugin    -->--}}
-{{--<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>--}}
-{{--<!-- Chartist JS -->--}}
 <script src="{{asset('js/chartist.min.js')}}"></script>
-{{--<!--  Notifications Plugin    -->--}}
-{{--<script src="../assets/js/plugins/bootstrap-notify.js"></script>--}}
-{{--<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->--}}
 <script src="{{asset('js/material-dashboard.min.js')}}"></script>
 
 <script type="text/javascript">
-
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -365,6 +318,7 @@
     .dataTable > thead > tr > th[class*=sort]:after{ display:none; !important;}
     .dataTable > thead > tr > th[class*=sort]:before{ display:none; !important;}
 </style>
+
 </body>
 
 </html>
