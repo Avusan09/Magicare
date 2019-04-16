@@ -10,7 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel="stylesheet">
     <!--<![endif]-->
 
-    <title>Magicare</title>
+    <title>MCIS</title>
 
     <style type="text/css">
         body {
@@ -144,7 +144,7 @@
     <tr>
         <td>
             <div style="overflow:hidden;display:none;font-size:1px;color:#ffffff;line-height:1px;font-family:Arial;maxheight:0px;max-width:0px;opacity:0;">
-                Magicare Vehicle Alert
+                MCIS Road Tax Expiry Alert
             </div>
         </td>
     </tr>
@@ -168,7 +168,7 @@
 
                             <tr>
                                 <td align="center" height="70" style="height:70px;">
-                                    <a href="" style="display: block; border-style: none !important; border: 0 !important;"><img width="100" border="0" style="display: block; width: 100px;" src="http://www.magicare.in/magic_care/images/magiccarelogo.jpg" alt="" /></a>
+                                    <a href="" style="display: block; border-style: none !important; border: 0 !important;"><img width="100" border="0" style="display: block; width: 100px;" src="{{asset('img/logo.png')}}" alt="" /></a>
                                 </td>
                             </tr>
 
@@ -202,7 +202,7 @@
 
                         <div style="line-height: 35px">
 
-                            Welcome to <span style="color: #5caad2;">Magicare</span>
+                            Welcome to <span style="color: #5caad2;">MCIS</span>
 
                         </div>
                     </td>
@@ -241,7 +241,7 @@
 
 
                                     <p style="line-height: 24px;margin-bottom:15px;">
-                                        Tax Expiry Information
+
                                     </p>
                                     <table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="5caad2" style="margin-bottom:20px;">
 
@@ -252,34 +252,26 @@
                                         <tr>
                                             <td height="10" style="font-size: 10px; line-height: 10px;">&nbsp;</td>
                                         </tr>
+                                        @if(count($varrt) > 0)
                                         <tr>
 
-                                            <th  style="color: #ffffff; text-transform:uppercase;font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">Vehicle Prefix</th>
+                                            <th  style="color: #ffffff; text-transform:uppercase;font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">Vehicle</th>
                                             <th  style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">Vehicle Number</th>
-                                            <th  style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">Servicing Date</th>
-                                            <th  style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">Expiry Date</th>
+
+                                            <th  style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">RT Renewed Date</th>
+                                            <th  style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">RT Expiry Date</th>
 
                                         </tr>
 
                                         <tr>
                                             <td height="10" style="font-size: 10px; line-height: 10px;border-bottom: 1px solid white">&nbsp;</td>
                                             <td height="10" style="font-size: 10px; line-height: 10px;border-bottom: 1px solid white">&nbsp;</td>
+
                                             <td height="10" style="font-size: 10px; line-height: 10px;border-bottom: 1px solid white">&nbsp;</td>
                                             <td height="10" style="font-size: 10px; line-height: 10px;border-bottom: 1px solid white">&nbsp;</td>
                                         </tr>
 
 
-
-                                        <tr>
-                                            <td height="10" style="font-size: 10px; line-height: 10px;">&nbsp;</td>
-                                        </tr>
-                                        <tr>
-<!--                                            <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->vehical_prefix}}</th>-->
-<!--                                            <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->vehical_number}}</th>-->
-<!--                                            <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->servicing_date}}</th>-->
-<!--                                            <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->expiry_date}}</th>-->
-
-                                        </tr>
 
                                         <tr>
                                             <td height="10" style="font-size: 10px; line-height: 10px;">&nbsp;</td>
@@ -287,29 +279,42 @@
 
 
 
-                                            {{--<td align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">--}}
-                                                {{--<!-- main section button -->--}}
+                                        @foreach($varrt as $rt)
+                                        <tr>
+                                            <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$rt->vehicle_prefix}}</th>
+                                            <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->vehicle_number}}</th>
 
-                                                {{--<div style="line-height: 22px;">--}}
-                                                    {{--<a href="" style="color: #ffffff; text-decoration: none;">Go to the site</a>--}}
-                                                    {{--</div>--}}
-                                                {{--</td>--}}
-                                            {{--</tr>--}}
+                                            <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->rt_date}}</th>
+                                            <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->rt_expiry_date}}</th>
+
+
+
+
+                                        </tr>
+                                        @endforeach
+
+
+                                        @else
+                                        <p style="line-height: 24px;margin-bottom:15px;color: #c6c6c6">
+                                            All vehicles's road taxes are renewed.
+                                        </p>
+                                        @endif
+
+
+
+
+<!--                                            {{--<td align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">--}}-->
+<!--                                                {{--<!-- main section button -->--}}-->
+<!---->
+<!--                                                {{--<div style="line-height: 22px;">--}}-->
+<!--                                                    {{--<a href="" style="color: #ffffff; text-decoration: none;">Go to the site</a>--}}-->
+<!--                                                    {{--</div>--}}-->
+<!--                                                {{--</td>--}}-->
+<!--                                            {{--</tr>--}}-->
                                     </table>
                                     <p style="line-height: 24px; margin-bottom:20px;">
 
                                     </p>
-
-                                    <p style="line-height: 24px;margin-bottom:15px;">
-                                        No vehicles are about to expire.
-                                    </p>
-
-
-
-
-
-
-
 
 
                                     <p style="line-height: 24px">
@@ -366,7 +371,7 @@
                                 <td align="left" style="color: #aaaaaa; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 24px;">
                                     <div style="line-height: 24px;">
 
-                                        <span style="color: #333333;">Magicare</span>
+                                        <span style="color: #333333;">MCIS</span>
 
                                     </div>
                                 </td>
