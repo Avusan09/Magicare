@@ -34,9 +34,3 @@ class TaxMail extends Mailable
         return $this->view('tax');
     }
 }
-//->to('carefreeav09@gmail.com')->from('carefreeav09@gmail.com','CarefreeAV')->subject('Vehicle Expiry Notification');
-//
-//send(['text'=>'mail'],['name','Abhushan'],function($message){
-//    $message->to('asmitasubedi0346@gmail.com','asmita')->subject('Vehicle Expiry Notification');
-//    $message->to('carefreeav09@gmail.com','Abhushan')->subject('Vehicle Expiry Notification');
-//    $message->from('carefreeav09@gmail.com','Aabhushan Gautam');

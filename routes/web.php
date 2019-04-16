@@ -54,3 +54,5 @@ Route::get('/admin-user', 'AdminUserController@index');
 Route::get('/send', 'MailController@send');
 Route::get('/mail', 'MailController@mail');
 Route::get('/tax', 'MailController@taxExpiry');
+Route::get('/ret', 'MailController@taxExpiry');
+Route::get('/rp', 'MailController@taxExpiry');

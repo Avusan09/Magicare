@@ -244,11 +244,6 @@
 
                                     </p>
                                     <table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="5caad2" style="margin-bottom:20px;">
-
-
-
-
-
                                         <tr>
                                             <td height="10" style="font-size: 10px; line-height: 10px;">&nbsp;</td>
                                         </tr>
@@ -266,7 +261,6 @@
                                         <tr>
                                             <td height="10" style="font-size: 10px; line-height: 10px;border-bottom: 1px solid white">&nbsp;</td>
                                             <td height="10" style="font-size: 10px; line-height: 10px;border-bottom: 1px solid white">&nbsp;</td>
-
                                             <td height="10" style="font-size: 10px; line-height: 10px;border-bottom: 1px solid white">&nbsp;</td>
                                             <td height="10" style="font-size: 10px; line-height: 10px;border-bottom: 1px solid white">&nbsp;</td>
                                         </tr>
@@ -282,10 +276,10 @@
                                         @foreach($varrt as $rt)
                                         <tr>
                                             <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$rt->vehicle_prefix}}</th>
-                                            <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->vehicle_number}}</th>
+                                            <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$rt->vehicle_number}}</th>
 
-                                            <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->rt_date}}</th>
-                                            <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$sks->rt_expiry_date}}</th>
+                                            <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$rt->rt_date}}</th>
+                                            <th align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">{{$rt->rt_expiry_date}}</th>
 
 
 
